@@ -1,7 +1,11 @@
 package nl.nberlijn.powercontrol;
 
 import nl.nberlijn.powercontrol.commands.*;
-import nl.nberlijn.powercontrol.config.Config;
+import nl.nberlijn.powercontrol.controllers.CommandController;
+import nl.nberlijn.powercontrol.controllers.PowerOnCommandController;
+import nl.nberlijn.powercontrol.models.CommandModel;
+import nl.nberlijn.powercontrol.models.PowerOnCommandModel;
+import nl.nberlijn.powercontrol.views.CommandView;
 import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.PropertiesConfiguration;
 
@@ -9,7 +13,8 @@ public final class Main {
 
     public static void main(String[] args) {
         // commandDemo();
-        configDemo();
+        // configDemo();
+        mvcDemo();
     }
 
     private static void commandDemo() {
@@ -21,30 +26,54 @@ public final class Main {
         Command powerOff = new PowerOffCommand(device);
 
         // Invoker
-        Switch powerSwitch = new Switch();
+        Switch switcher = new Switch();
 
         // Switch commands
-        powerSwitch.execute(powerOn);
-        powerSwitch.execute(powerOff);
-        powerSwitch.execute(powerOff);
-        powerSwitch.execute(powerOn);
+        switcher.execute(powerOn);
+        switcher.execute(powerOff);
+        switcher.execute(powerOff);
+        switcher.execute(powerOn);
     }
 
     private static void configDemo() {
-        // Config
-        PropertiesConfiguration propertiesConfiguration = Config.INSTANCE.getConfiguration();
-
-        // Read property from the config
-        System.out.println(propertiesConfiguration.getProperty("power_on.name"));
-
-        // Update config
-        propertiesConfiguration.setProperty("power_on.name", "Power on");
-
         try {
-            propertiesConfiguration.save();
+            // Config
+            PropertiesConfiguration powerOnConfiguration = new PropertiesConfiguration("power_on.properties");
+
+            // Read property from the config
+            System.out.println(powerOnConfiguration.getProperty("name"));
+
+            // Update config
+            powerOnConfiguration.setProperty("name", "Power on");
+
+            // Read property from the config
+            System.out.println(powerOnConfiguration.getProperty("name"));
         } catch (ConfigurationException e) {
             System.err.println(e.getMessage());
         }
+    }
+
+    private static void mvcDemo() {
+        // MVC
+        CommandModel powerOnCommandModel = new PowerOnCommandModel();
+        CommandView powerOnCommandView = new CommandView();
+        CommandController powerOnCommandController = new PowerOnCommandController(powerOnCommandModel, powerOnCommandView);
+
+        // Update the view
+        powerOnCommandController.updateView();
+
+        // Update some data
+        powerOnCommandModel.setName("Name update");
+        powerOnCommandModel.setHost("Host update");
+        powerOnCommandModel.setUser("User update");
+        powerOnCommandModel.setPassword("Password update");
+        powerOnCommandModel.setPort(8787);
+        powerOnCommandModel.setTimeout(5000);
+        powerOnCommandModel.setCommand("Command update");
+        powerOnCommandModel.save();
+
+        // Update the view
+        powerOnCommandController.updateView();
     }
 
 }
