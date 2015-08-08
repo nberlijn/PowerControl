@@ -14,10 +14,10 @@ public final class Main extends Application {
     }
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource(GUI.INSTANCE.DIR + "main.fxml"));
+    public void start(Stage primaryStage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource(GUI.INSTANCE.DIR + GUI.INSTANCE.MAIN));
 
-        primaryStage.setTitle("PowerControl");
+        primaryStage.setTitle(GUI.INSTANCE.TITLE);
         primaryStage.setScene(new Scene(root, GUI.INSTANCE.WIDTH, GUI.INSTANCE.HEIGHT));
         primaryStage.show();
     }
