@@ -14,4 +14,16 @@ public final class Device {
         // TODO: Add logic to power off the device
     }
 
+    public void update() {
+        System.out.println("Update the device");
+
+        // TODO: Add logic to update the device
+    }
+
+    public void clean() {
+        System.out.println("Clean the device");
+
+        // TODO: Add logic to clean the device
+    }
+
 }

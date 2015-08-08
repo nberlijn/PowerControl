@@ -1,6 +1,8 @@
 package nl.nberlijn.powercontrol.models;
 
-public abstract class CommandModel extends Model {
+import nl.nberlijn.powercontrol.config.Properties;
+
+public final class CommandModel extends Model {
 
     private String name;
     private String host;
@@ -10,16 +12,8 @@ public abstract class CommandModel extends Model {
     private Integer timeout;
     private String command;
 
-    public CommandModel(String config) {
-        super(config);
-
-        name = (String) getProperty("name");
-        host = (String) getProperty("host");
-        user = (String) getProperty("user");
-        password = (String) getProperty("password");
-        port = Integer.valueOf((String) getProperty("port"));
-        timeout = Integer.valueOf((String) getProperty("timeout"));
-        command = (String) getProperty("command");
+    public CommandModel() {
+        super(Properties.INSTANCE.COMMANDS);
     }
 
     public String getName() {
@@ -78,17 +72,28 @@ public abstract class CommandModel extends Model {
         this.command = command;
     }
 
-    @Override
-    public void save() {
-        setProperty("name", name);
-        setProperty("host", host);
-        setProperty("user", user);
-        setProperty("password", password);
-        setProperty("port", port);
-        setProperty("timeout", timeout);
-        setProperty("command", command);
+    public void select(String select) {
+        setSelected(select);
 
-        super.save();
+        name = (String) getProperty(getSelected() + ".name");
+        host = (String) getProperty(getSelected() + ".host");
+        user = (String) getProperty(getSelected() + ".user");
+        password = (String) getProperty(getSelected() + ".password");
+        port = Integer.valueOf((String) getProperty(getSelected() + ".port"));
+        timeout = Integer.valueOf((String) getProperty(getSelected() + ".timeout"));
+        command = (String) getProperty(getSelected() + ".command");
+    }
+
+    public void update() {
+        setProperty(getSelected() + ".name", name);
+        setProperty(getSelected() + ".host", host);
+        setProperty(getSelected() + ".user", user);
+        setProperty(getSelected() + ".password", password);
+        setProperty(getSelected() + ".port", port);
+        setProperty(getSelected() + ".timeout", timeout);
+        setProperty(getSelected() + ".command", command);
+
+        save();
     }
 
 }

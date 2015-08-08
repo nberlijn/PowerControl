@@ -1,79 +1,25 @@
 package nl.nberlijn.powercontrol;
 
-import nl.nberlijn.powercontrol.commands.*;
-import nl.nberlijn.powercontrol.controllers.CommandController;
-import nl.nberlijn.powercontrol.controllers.PowerOnCommandController;
-import nl.nberlijn.powercontrol.models.CommandModel;
-import nl.nberlijn.powercontrol.models.PowerOnCommandModel;
-import nl.nberlijn.powercontrol.views.CommandView;
-import org.apache.commons.configuration.ConfigurationException;
-import org.apache.commons.configuration.PropertiesConfiguration;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import nl.nberlijn.powercontrol.config.GUI;
 
-public final class Main {
+public final class Main extends Application {
 
     public static void main(String[] args) {
-        // commandDemo();
-        // configDemo();
-        mvcDemo();
+        launch(args);
     }
 
-    private static void commandDemo() {
-        // Receiver
-        Device device = new Device();
+    @Override
+    public void start(Stage primaryStage) throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource(GUI.INSTANCE.DIR + "main.fxml"));
 
-        // Commands
-        Command powerOn = new PowerOnCommand(device);
-        Command powerOff = new PowerOffCommand(device);
-
-        // Invoker
-        Switch switcher = new Switch();
-
-        // Switch commands
-        switcher.execute(powerOn);
-        switcher.execute(powerOff);
-        switcher.execute(powerOff);
-        switcher.execute(powerOn);
-    }
-
-    private static void configDemo() {
-        try {
-            // Config
-            PropertiesConfiguration powerOnConfiguration = new PropertiesConfiguration("power_on.properties");
-
-            // Read property from the config
-            System.out.println(powerOnConfiguration.getProperty("name"));
-
-            // Update config
-            powerOnConfiguration.setProperty("name", "Power on");
-
-            // Read property from the config
-            System.out.println(powerOnConfiguration.getProperty("name"));
-        } catch (ConfigurationException e) {
-            System.err.println(e.getMessage());
-        }
-    }
-
-    private static void mvcDemo() {
-        // MVC
-        CommandModel powerOnCommandModel = new PowerOnCommandModel();
-        CommandView powerOnCommandView = new CommandView();
-        CommandController powerOnCommandController = new PowerOnCommandController(powerOnCommandModel, powerOnCommandView);
-
-        // Update the view
-        powerOnCommandController.updateView();
-
-        // Update some data
-        powerOnCommandModel.setName("Name update");
-        powerOnCommandModel.setHost("Host update");
-        powerOnCommandModel.setUser("User update");
-        powerOnCommandModel.setPassword("Password update");
-        powerOnCommandModel.setPort(8787);
-        powerOnCommandModel.setTimeout(5000);
-        powerOnCommandModel.setCommand("Command update");
-        powerOnCommandModel.save();
-
-        // Update the view
-        powerOnCommandController.updateView();
+        primaryStage.setTitle("PowerControl");
+        primaryStage.setScene(new Scene(root, GUI.INSTANCE.WIDTH, GUI.INSTANCE.HEIGHT));
+        primaryStage.show();
     }
 
 }
