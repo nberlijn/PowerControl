@@ -19,9 +19,9 @@ public class CommandTask extends Task<Boolean> {
             @Override
             public void handle(WorkerStateEvent event) {
                 if (getValue().equals(true)) {
-                    alertMessage(Alert.AlertType.INFORMATION, "Succeeded", "Succeeded", "The command " + commandModel.getName() + " has been successful executed");
+                    alertMessage(Alert.AlertType.INFORMATION, "Succeeded", "Succeeded", "The command " + commandModel.getName().toLowerCase() + " has been successful executed");
                 } else {
-                    alertMessage(Alert.AlertType.ERROR, "Failed", "Failed", "Something went wrong while executing the " + commandModel.getName() + " command");
+                    alertMessage(Alert.AlertType.ERROR, "Failed", "Failed", "Something went wrong while executing the " + commandModel.getName().toLowerCase() + " command");
                 }
             }
         });
