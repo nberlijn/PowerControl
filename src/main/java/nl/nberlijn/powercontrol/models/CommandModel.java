@@ -11,37 +11,38 @@ public class CommandModel extends Model {
     private Integer port;
     private Integer timeout;
     private String command;
+    private String selected;
 
     public CommandModel() {
-        super(Properties.INSTANCE.COMMANDS);
+        super(Properties.COMMANDS_FILE);
     }
 
     public CommandModel(String select) {
-        super(Properties.INSTANCE.COMMANDS);
+        super(Properties.COMMANDS_FILE);
 
         select(select);
     }
 
     public void select(String select) {
-        setSelected(select);
+        selected = select;
 
-        name = (String) getProperty(getSelected() + ".name");
-        host = (String) getProperty(getSelected() + ".host");
-        user = (String) getProperty(getSelected() + ".user");
-        password = (String) getProperty(getSelected() + ".password");
-        port = Integer.valueOf((String) getProperty(getSelected() + ".port"));
-        timeout = Integer.valueOf((String) getProperty(getSelected() + ".timeout"));
-        command = (String) getProperty(getSelected() + ".command");
+        name = (String) getProperty(selected + ".name");
+        host = (String) getProperty(selected + ".host");
+        user = (String) getProperty(selected + ".user");
+        password = (String) getProperty(selected + ".password");
+        port = Integer.valueOf((String) getProperty(selected+ ".port"));
+        timeout = Integer.valueOf((String) getProperty(selected + ".timeout"));
+        command = (String) getProperty(selected + ".command");
     }
 
     public void update() {
-        setProperty(getSelected() + ".name", name);
-        setProperty(getSelected() + ".host", host);
-        setProperty(getSelected() + ".user", user);
-        setProperty(getSelected() + ".password", password);
-        setProperty(getSelected() + ".port", port);
-        setProperty(getSelected() + ".timeout", timeout);
-        setProperty(getSelected() + ".command", command);
+        setProperty(selected + ".name", name);
+        setProperty(selected + ".host", host);
+        setProperty(selected + ".user", user);
+        setProperty(selected + ".password", password);
+        setProperty(selected + ".port", port);
+        setProperty(selected + ".timeout", timeout);
+        setProperty(selected + ".command", command);
 
         save();
     }

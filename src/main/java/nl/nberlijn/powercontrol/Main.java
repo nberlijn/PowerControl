@@ -12,11 +12,11 @@ public final class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource(GUI.INSTANCE.DIR + GUI.INSTANCE.MAIN));
+        Parent root = FXMLLoader.load(getClass().getResource(GUI.VIEWS_DIR + GUI.MAIN_FILE));
 
         primaryStage.setResizable(false);
-        primaryStage.setTitle(GUI.INSTANCE.TITLE);
-        primaryStage.setScene(new Scene(root, GUI.INSTANCE.WIDTH, GUI.INSTANCE.HEIGHT));
+        primaryStage.setTitle(GUI.TITLE);
+        primaryStage.setScene(new Scene(root, GUI.WIDTH, GUI.HEIGHT));
         primaryStage.show();
     }
 

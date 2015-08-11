@@ -8,11 +8,10 @@ import org.apache.commons.configuration.PropertiesConfiguration;
 public abstract class Model {
 
     private PropertiesConfiguration propertiesConfiguration;
-    private String selected;
 
     public Model(String fileName) {
         try {
-            propertiesConfiguration = new PropertiesConfiguration(Properties.INSTANCE.DIR + fileName + ".properties");
+            propertiesConfiguration = new PropertiesConfiguration(Properties.DIR + fileName + Properties.EXTENSION);
         } catch (ConfigurationException e) {
             System.err.println(e.getMessage());
         }
@@ -24,14 +23,6 @@ public abstract class Model {
         } catch (ConfigurationException e) {
             System.err.println(e.getMessage());
         }
-    }
-
-    protected String getSelected() {
-        return selected;
-    }
-
-    protected void setSelected(String selected) {
-        this.selected = selected;
     }
 
     protected Object getProperty(String key) {

@@ -1,10 +1,10 @@
 package nl.nberlijn.powercontrol.config;
 
-public enum Properties {
+public final class Properties {
 
-    INSTANCE;
-
-    public final String DIR = "properties/";
-    public final String COMMANDS = "commands";
+    public static final String DIR = "properties/";
+    public static final String EXTENSION = ".properties";
+    public static final String COMMANDS_FILE = "commands";
+    public static final String DEVICE_FILE = "device";
 
 }

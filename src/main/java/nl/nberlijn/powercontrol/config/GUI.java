@@ -1,13 +1,11 @@
 package nl.nberlijn.powercontrol.config;
 
-public enum GUI {
+public final class GUI {
 
-    INSTANCE;
-
-    public final String DIR = "/views/";
-    public final String MAIN = "main.fxml";
-    public final String TITLE = "PowerControl";
-    public final Integer WIDTH = 400;
-    public final Integer HEIGHT = 200;
+    public static final String VIEWS_DIR = "/views/";
+    public static final String MAIN_FILE = "main.fxml";
+    public static final String TITLE = App.NAME;
+    public static final Integer WIDTH = 400;
+    public static final Integer HEIGHT = 200;
 
 }
