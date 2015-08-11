@@ -16,31 +16,31 @@ public class CommandController {
     private ProgressIndicator progressIndicator;
 
     @FXML
-    public void handlePowerOn() {
-        executeCommand(Commands.POWER_ON_ALIAS);
+    public void handlePowerOnButton() {
+        handleCommand(Commands.POWER_ON_ALIAS);
     }
 
     @FXML
-    public void handlePowerOff() {
-        executeCommand(Commands.POWER_OFF_ALIAS);
+    public void handlePowerOffButton() {
+        handleCommand(Commands.POWER_OFF_ALIAS);
     }
 
     @FXML
-    public void handleUpdate() {
-        executeCommand(Commands.UPDATE_ALIAS);
+    public void handleUpdateButton() {
+        handleCommand(Commands.UPDATE_ALIAS);
     }
 
     @FXML
-    public void handleReboot() {
-        executeCommand(Commands.REBOOT_ALIAS);
+    public void handleRebootButton() {
+        handleCommand(Commands.REBOOT_ALIAS);
     }
 
     @FXML
-    public void handleClean() {
-        executeCommand(Commands.CLEAN_ALIAS);
+    public void handleCleanButton() {
+        handleCommand(Commands.CLEAN_ALIAS);
     }
 
-    private void executeCommand(String command) {
+    private void handleCommand(String command) {
         new CommandService(command, commandsPane, progressIndicator).start();
     }
 

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<TabPane prefHeight="350.0" prefWidth="350.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1">
+    <tabs>
+        <Tab text="Device">
+            <content>
+                <AnchorPane>
+                    <children>
+                        <GridPane nodeOrientation="LEFT_TO_RIGHT" vgap="5.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" prefWidth="100.0"/>
+                                <ColumnConstraints hgrow="SOMETIMES"/>
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints vgrow="SOMETIMES"/>
+                                <RowConstraints vgrow="SOMETIMES"/>
+                                <RowConstraints vgrow="SOMETIMES"/>
+                                <RowConstraints vgrow="SOMETIMES"/>
+                            </rowConstraints>
+                            <children>
+                                <Label text="Name" GridPane.rowIndex="0"/>
+                                <TextField GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                                <Label text="Host" GridPane.rowIndex="1"/>
+                                <TextField GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                                <Label text="Port" GridPane.rowIndex="2"/>
+                                <TextField GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                                <Button mnemonicParsing="false" text="Update" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                            </children>
+                            <padding>
+                                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0"/>
+                            </padding>
+                        </GridPane>
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+        <Tab text="Commands">
+            <content>
+                <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                        <Tab text="Power on">
+                            <content>
+                                <AnchorPane>
+                                    <children>
+                                        <fx:include source="edit_command.fxml"/>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab text="Power off">
+                            <content>
+                                <AnchorPane>
+                                    <children>
+                                        <fx:include source="edit_command.fxml"/>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab text="Reboot">
+                            <content>
+                                <AnchorPane>
+                                    <children>
+                                        <fx:include source="edit_command.fxml"/>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab text="Update">
+                            <content>
+                                <AnchorPane>
+                                    <children>
+                                        <fx:include source="edit_command.fxml"/>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab text="Clean">
+                            <content>
+                                <AnchorPane>
+                                    <children>
+                                        <fx:include source="edit_command.fxml"/>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                    </tabs>
+                </TabPane>
+            </content>
+        </Tab>
+    </tabs>
+</TabPane>

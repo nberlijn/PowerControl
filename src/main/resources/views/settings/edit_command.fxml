@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane nodeOrientation="LEFT_TO_RIGHT" vgap="5.0">
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" prefWidth="100.0"/>
+        <ColumnConstraints hgrow="SOMETIMES"/>
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints vgrow="SOMETIMES"/>
+        <RowConstraints vgrow="SOMETIMES"/>
+        <RowConstraints vgrow="SOMETIMES"/>
+        <RowConstraints vgrow="SOMETIMES"/>
+        <RowConstraints vgrow="SOMETIMES"/>
+        <RowConstraints vgrow="SOMETIMES"/>
+        <RowConstraints vgrow="SOMETIMES"/>
+        <RowConstraints vgrow="SOMETIMES"/>
+    </rowConstraints>
+    <children>
+        <Label text="Name" GridPane.rowIndex="0"/>
+        <TextField GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+        <Label text="Host" GridPane.rowIndex="1"/>
+        <TextField GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        <Label text="User" GridPane.rowIndex="2"/>
+        <TextField GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+        <Label text="Password" GridPane.rowIndex="3"/>
+        <TextField GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+        <Label text="Port" GridPane.rowIndex="4"/>
+        <TextField GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+        <Label text="Timeout" GridPane.rowIndex="5"/>
+        <TextField GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+        <Label text="Command" GridPane.rowIndex="6"/>
+        <TextField GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+        <Button mnemonicParsing="false" text="Update" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+    </children>
+    <padding>
+        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0"/>
+    </padding>
+</GridPane>
