@@ -7,7 +7,7 @@ import javafx.scene.layout.GridPane;
 import nl.nberlijn.powercontrol.config.Commands;
 import nl.nberlijn.powercontrol.services.command.CommandService;
 
-public class CommandController {
+public class CommandsController {
 
     @FXML
     private GridPane commandsPane;

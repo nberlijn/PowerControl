@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<GridPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nl.nberlijn.powercontrol.controllers.CommandsController">
+    <columnConstraints>
+        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES"/>
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints vgrow="SOMETIMES"/>
+    </rowConstraints>
+    <GridPane fx:id="commandsPane" alignment="CENTER">
+        <columnConstraints>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES"/>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES"/>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES"/>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES"/>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES"/>
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints vgrow="SOMETIMES"/>
+            <RowConstraints vgrow="SOMETIMES"/>
+        </rowConstraints>
+        <Button mnemonicParsing="false" onAction="#handlePowerOnButton" prefWidth="125.0" text="Power on" GridPane.columnIndex="1">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Button>
+        <fx:include source="status.fxml" GridPane.columnIndex="2"/>
+        <Button mnemonicParsing="false" onAction="#handlePowerOffButton" prefWidth="125.0" text="Power off" GridPane.columnIndex="3">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Button>
+        <Button mnemonicParsing="false" onAction="#handleUpdateButton" prefWidth="75.0" text="Update" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        <Button mnemonicParsing="false" onAction="#handleRebootButton" prefWidth="75.0" text="Reboot" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+        <Button mnemonicParsing="false" onAction="#handleCleanButton" prefWidth="75.0" text="Clean" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+    </GridPane>
+    <ProgressIndicator fx:id="progressIndicator" maxHeight="100.0" maxWidth="100.0" progress="0.0" visible="false"/>
+</GridPane>

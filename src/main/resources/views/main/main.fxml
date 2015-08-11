@@ -10,8 +10,6 @@
         <RowConstraints percentHeight="15.0" valignment="TOP"/>
         <RowConstraints percentHeight="85.0" valignment="CENTER" vgrow="ALWAYS"/>
     </rowConstraints>
-    <children>
-        <fx:include source="menu.fxml" GridPane.rowIndex="0" />
-        <fx:include source="command.fxml" GridPane.rowIndex="1" />
-    </children>
+    <fx:include source="menu.fxml" GridPane.rowIndex="0" />
+    <fx:include source="commands.fxml" GridPane.rowIndex="1" />
 </GridPane>
