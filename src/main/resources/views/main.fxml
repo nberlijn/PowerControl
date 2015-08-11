@@ -2,19 +2,16 @@
 
 <?import javafx.scene.layout.*?>
 
-<GridPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="200.0" prefWidth="400.0"
-          xmlns="http://javafx.com/javafx/null">
+<GridPane alignment="CENTER" prefHeight="200.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
     <columnConstraints>
-        <ColumnConstraints hgrow="SOMETIMES"/>
+        <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" percentWidth="100.0"/>
     </columnConstraints>
     <rowConstraints>
-        <RowConstraints valignment="TOP" vgrow="SOMETIMES"/>
-        <RowConstraints valignment="CENTER" vgrow="SOMETIMES"/>
-        <RowConstraints valignment="BOTTOM" vgrow="SOMETIMES"/>
+        <RowConstraints percentHeight="15.0" valignment="TOP"/>
+        <RowConstraints percentHeight="85.0" valignment="CENTER" vgrow="ALWAYS"/>
     </rowConstraints>
     <children>
-        <fx:include fx:id="menu" source="menu.fxml" GridPane.rowIndex="0"/>
-        <fx:include fx:id="power" source="commands.fxml" GridPane.rowIndex="1"/>
-        <fx:include fx:id="footer" source="footer.fxml" GridPane.rowIndex="2"/>
+        <fx:include source="partials/menu.fxml" GridPane.rowIndex="0" />
+        <fx:include source="partials/command.fxml" GridPane.rowIndex="1" />
     </children>
 </GridPane>

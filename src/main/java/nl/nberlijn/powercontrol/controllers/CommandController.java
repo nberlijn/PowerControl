@@ -1,13 +1,47 @@
 package nl.nberlijn.powercontrol.controllers;
 
-import nl.nberlijn.powercontrol.models.CommandModel;
+import javafx.fxml.FXML;
+import javafx.scene.control.ProgressIndicator;
+import javafx.scene.layout.GridPane;
 
-public final class CommandController extends Controller {
+import nl.nberlijn.powercontrol.config.Commands;
+import nl.nberlijn.powercontrol.services.command.CommandService;
 
-    private CommandModel commandModel;
+public class CommandController {
 
-    public CommandController(CommandModel commandModel) {
-        this.commandModel = commandModel;
+    @FXML
+    private GridPane commandsPane;
+
+    @FXML
+    private ProgressIndicator progressIndicator;
+
+    @FXML
+    public void handlePowerOn() {
+        executeCommand(Commands.INSTANCE.POWER_ON_ALIAS);
+    }
+
+    @FXML
+    public void handlePowerOff() {
+        executeCommand(Commands.INSTANCE.POWER_OFF_ALIAS);
+    }
+
+    @FXML
+    public void handleUpdate() {
+        executeCommand(Commands.INSTANCE.UPDATE_ALIAS);
+    }
+
+    @FXML
+    public void handleReboot() {
+        executeCommand(Commands.INSTANCE.REBOOT_ALIAS);
+    }
+
+    @FXML
+    public void handleClean() {
+        executeCommand(Commands.INSTANCE.CLEAN_ALIAS);
+    }
+
+    private void executeCommand(String command) {
+        new CommandService(command, commandsPane, progressIndicator).start();
     }
 
 }

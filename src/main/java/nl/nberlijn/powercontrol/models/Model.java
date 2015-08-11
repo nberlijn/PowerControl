@@ -1,6 +1,7 @@
 package nl.nberlijn.powercontrol.models;
 
 import nl.nberlijn.powercontrol.config.Properties;
+
 import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.PropertiesConfiguration;
 
