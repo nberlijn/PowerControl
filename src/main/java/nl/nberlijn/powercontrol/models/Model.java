@@ -1,7 +1,5 @@
 package nl.nberlijn.powercontrol.models;
 
-import nl.nberlijn.powercontrol.config.Properties;
-
 import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.PropertiesConfiguration;
 
@@ -11,7 +9,7 @@ public abstract class Model {
 
     public Model(String fileName) {
         try {
-            propertiesConfiguration = new PropertiesConfiguration(Properties.DIR + fileName + Properties.EXTENSION);
+            propertiesConfiguration = new PropertiesConfiguration(fileName);
         } catch (ConfigurationException e) {
             System.err.println(e.getMessage());
         }
@@ -25,8 +23,8 @@ public abstract class Model {
         }
     }
 
-    protected Object getProperty(String key) {
-        return propertiesConfiguration.getProperty(key);
+    protected String getProperty(String key) {
+        return propertiesConfiguration.getString(key);
     }
 
     protected void setProperty(String key, Object value) {

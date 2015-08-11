@@ -11,38 +11,27 @@ public class CommandModel extends Model {
     private Integer port;
     private Integer timeout;
     private String command;
-    private String selected;
-
-    public CommandModel() {
-        super(Properties.COMMANDS_FILE);
-    }
 
     public CommandModel(String select) {
-        super(Properties.COMMANDS_FILE);
+        super(Properties.COMMANDS_DIR_PATH + select + Properties.PROPERTIES_EXTENSION);
 
-        select(select);
-    }
-
-    public void select(String select) {
-        selected = select;
-
-        name = (String) getProperty(selected + ".name");
-        host = (String) getProperty(selected + ".host");
-        user = (String) getProperty(selected + ".user");
-        password = (String) getProperty(selected + ".password");
-        port = Integer.valueOf((String) getProperty(selected+ ".port"));
-        timeout = Integer.valueOf((String) getProperty(selected + ".timeout"));
-        command = (String) getProperty(selected + ".command");
+        name = getProperty("name");
+        host = getProperty("host");
+        user = getProperty("user");
+        password = getProperty("password");
+        port = Integer.valueOf(getProperty("port"));
+        timeout = Integer.valueOf(getProperty("timeout"));
+        command = getProperty("command");
     }
 
     public void update() {
-        setProperty(selected + ".name", name);
-        setProperty(selected + ".host", host);
-        setProperty(selected + ".user", user);
-        setProperty(selected + ".password", password);
-        setProperty(selected + ".port", port);
-        setProperty(selected + ".timeout", timeout);
-        setProperty(selected + ".command", command);
+        setProperty("name", name);
+        setProperty("host", host);
+        setProperty("user", user);
+        setProperty("password", password);
+        setProperty("port", String.valueOf(port));
+        setProperty("timeout", String.valueOf(timeout));
+        setProperty("command", command);
 
         save();
     }

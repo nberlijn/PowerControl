@@ -17,27 +17,27 @@ public class CommandController {
 
     @FXML
     public void handlePowerOnButton() {
-        handleCommand(Commands.POWER_ON_ALIAS);
+        handleCommand(Commands.POWER_ON);
     }
 
     @FXML
     public void handlePowerOffButton() {
-        handleCommand(Commands.POWER_OFF_ALIAS);
+        handleCommand(Commands.POWER_OFF);
     }
 
     @FXML
     public void handleUpdateButton() {
-        handleCommand(Commands.UPDATE_ALIAS);
+        handleCommand(Commands.UPDATE);
     }
 
     @FXML
     public void handleRebootButton() {
-        handleCommand(Commands.REBOOT_ALIAS);
+        handleCommand(Commands.REBOOT);
     }
 
     @FXML
     public void handleCleanButton() {
-        handleCommand(Commands.CLEAN_ALIAS);
+        handleCommand(Commands.CLEAN);
     }
 
     private void handleCommand(String command) {

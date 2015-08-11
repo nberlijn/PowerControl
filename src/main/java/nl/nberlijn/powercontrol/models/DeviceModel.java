@@ -9,17 +9,17 @@ public class DeviceModel extends Model {
     private Integer port;
 
     public DeviceModel() {
-        super(Properties.DEVICE_FILE);
+        super(Properties.DEVICE_FILE_PATH);
 
-        name = (String) getProperty("name");
-        host = (String) getProperty("host");
-        port = Integer.valueOf((String) getProperty("port"));
+        name = getProperty("name");
+        host = getProperty("host");
+        port = Integer.valueOf(getProperty("port"));
     }
 
     public void update() {
         setProperty("name", name);
         setProperty("host", host);
-        setProperty("port", port);
+        setProperty("port", String.valueOf(port));
 
         save();
     }

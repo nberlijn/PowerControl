@@ -14,7 +14,7 @@ public class MenuController {
 
     @FXML
     public void handleSettingsMenuItem() throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource(GUI.SETTINGS_VIEWS_FILE_PATH));
+        Parent root = FXMLLoader.load(getClass().getResource(GUI.SETTINGS_VIEW_FILE_PATH));
 
         Stage stage = new Stage();
         stage.setResizable(false);
