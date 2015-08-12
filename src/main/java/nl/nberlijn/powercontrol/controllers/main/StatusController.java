@@ -1,4 +1,4 @@
-package nl.nberlijn.powercontrol.controllers;
+package nl.nberlijn.powercontrol.controllers.main;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;

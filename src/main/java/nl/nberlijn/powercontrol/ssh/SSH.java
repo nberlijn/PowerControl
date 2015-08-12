@@ -1,6 +1,6 @@
 package nl.nberlijn.powercontrol.ssh;
 
-public interface SSH {
+interface SSH {
 
     void connect() throws Exception;
     void disconnect();

@@ -7,10 +7,10 @@ import nl.nberlijn.powercontrol.models.DeviceModel;
 import java.net.Socket;
 import java.util.TimerTask;
 
-public class StatusTask extends TimerTask {
+class StatusTask extends TimerTask {
 
-    private DeviceModel deviceModel;
-    private Circle statusCircle;
+    private final DeviceModel deviceModel;
+    private final Circle statusCircle;
 
     public StatusTask(Circle statusCircle) {
         this.deviceModel = new DeviceModel();

@@ -3,11 +3,11 @@ package nl.nberlijn.powercontrol.models;
 import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.PropertiesConfiguration;
 
-public abstract class Model {
+abstract class Model {
 
     private PropertiesConfiguration propertiesConfiguration;
 
-    public Model(String fileName) {
+    Model(String fileName) {
         try {
             propertiesConfiguration = new PropertiesConfiguration(fileName);
         } catch (ConfigurationException e) {
@@ -15,7 +15,7 @@ public abstract class Model {
         }
     }
 
-    protected void save() {
+    void save() {
         try {
             propertiesConfiguration.save();
         } catch (ConfigurationException e) {
@@ -23,11 +23,11 @@ public abstract class Model {
         }
     }
 
-    protected String getProperty(String key) {
+    String getProperty(String key) {
         return propertiesConfiguration.getString(key);
     }
 
-    protected void setProperty(String key, Object value) {
+    void setProperty(String key, Object value) {
         propertiesConfiguration.setProperty(key, value);
     }
 

@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 
 import nl.nberlijn.powercontrol.config.GUI;
 
-public final class Main extends Application {
+public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {

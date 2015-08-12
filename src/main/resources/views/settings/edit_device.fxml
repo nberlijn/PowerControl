@@ -4,7 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<GridPane nodeOrientation="LEFT_TO_RIGHT" vgap="5.0">
+<GridPane nodeOrientation="LEFT_TO_RIGHT" vgap="5.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nl.nberlijn.powercontrol.controllers.settings.EditDeviceController">
     <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" prefWidth="100.0"/>
         <ColumnConstraints hgrow="SOMETIMES"/>
@@ -15,15 +15,13 @@
         <RowConstraints vgrow="SOMETIMES"/>
         <RowConstraints vgrow="SOMETIMES"/>
     </rowConstraints>
-    <children>
-        <Label text="Name" GridPane.rowIndex="0"/>
-        <TextField GridPane.columnIndex="1" GridPane.rowIndex="0"/>
-        <Label text="Host" GridPane.rowIndex="1"/>
-        <TextField GridPane.columnIndex="1" GridPane.rowIndex="1"/>
-        <Label text="Port" GridPane.rowIndex="2"/>
-        <TextField GridPane.columnIndex="1" GridPane.rowIndex="2"/>
-        <Button mnemonicParsing="false" text="Update" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
-    </children>
+    <Label text="Name" GridPane.rowIndex="0"/>
+    <TextField fx:id="nameTextField" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+    <Label text="Host" GridPane.rowIndex="1"/>
+    <TextField fx:id="hostTextField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+    <Label text="Port" GridPane.rowIndex="2"/>
+    <TextField fx:id="portTextField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+    <Button mnemonicParsing="false" text="Update" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
     <padding>
         <Insets bottom="15.0" left="15.0" right="15.0" top="15.0"/>
     </padding>

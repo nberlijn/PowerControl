@@ -6,14 +6,14 @@ import com.jcraft.jsch.Session;
 
 public class SSHClient implements SSH {
 
-    private String host;
-    private String user;
-    private String password;
-    private Integer port;
-    private Integer timeout;
-    private String command;
+    private final String host;
+    private final String user;
+    private final String password;
+    private final Integer port;
+    private final Integer timeout;
+    private final String command;
 
-    private JSch jSch;
+    private final JSch jSch;
     private Session session;
 
     public SSHClient(String host, String user, String password, Integer port, Integer timeout, String command) {

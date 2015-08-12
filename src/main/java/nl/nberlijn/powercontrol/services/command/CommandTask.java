@@ -2,27 +2,22 @@ package nl.nberlijn.powercontrol.services.command;
 
 import javafx.concurrent.Task;
 
-import javafx.concurrent.WorkerStateEvent;
-import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
 import nl.nberlijn.powercontrol.models.CommandModel;
 import nl.nberlijn.powercontrol.ssh.SSHClientExecutor;
 
-public class CommandTask extends Task<Boolean> {
+class CommandTask extends Task<Boolean> {
 
-    private CommandModel commandModel;
+    private final CommandModel commandModel;
 
     public CommandTask(String command) {
         this.commandModel = new CommandModel(command);
 
-        setOnSucceeded(new EventHandler<WorkerStateEvent>() {
-            @Override
-            public void handle(WorkerStateEvent event) {
-                if (getValue().equals(true)) {
-                    alertMessage(Alert.AlertType.INFORMATION, "Succeeded", "Succeeded", "The command " + commandModel.getName().toLowerCase() + " has been successful executed");
-                } else {
-                    alertMessage(Alert.AlertType.ERROR, "Failed", "Failed", "Something went wrong while executing the " + commandModel.getName().toLowerCase() + " command");
-                }
+        setOnSucceeded(event -> {
+            if (getValue().equals(true)) {
+                alertMessage(Alert.AlertType.INFORMATION, "Succeeded", "Succeeded", "The command " + commandModel.getName().toLowerCase() + " has been successful executed");
+            } else {
+                alertMessage(Alert.AlertType.ERROR, "Failed", "Failed", "Something went wrong while executing the " + commandModel.getName().toLowerCase() + " command");
             }
         });
     }

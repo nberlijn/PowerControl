@@ -1,4 +1,4 @@
-package nl.nberlijn.powercontrol.controllers;
+package nl.nberlijn.powercontrol.controllers.main;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -7,8 +7,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
+
 import nl.nberlijn.powercontrol.config.App;
 import nl.nberlijn.powercontrol.config.GUI;
+import nl.nberlijn.powercontrol.config.Symbols;
 
 public class MenuController {
 
@@ -34,7 +36,7 @@ public class MenuController {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("About");
         alert.setHeaderText("About " + App.NAME);
-        alert.setContentText(App.NAME + " version " + App.VERSION + "\nCopyright \u00a9 " + App.AUTHOR);
+        alert.setContentText(App.NAME + " version " + App.VERSION + "\nCopyright " + Symbols.COPYRIGHT + " " + App.AUTHOR);
         alert.showAndWait();
     }
 

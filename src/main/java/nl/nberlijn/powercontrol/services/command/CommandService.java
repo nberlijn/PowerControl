@@ -7,9 +7,9 @@ import javafx.scene.layout.GridPane;
 
 public class CommandService extends Service<Boolean> {
 
-    private String command;
-    private GridPane commandsPane;
-    private ProgressIndicator progressIndicator;
+    private final String command;
+    private final GridPane commandsPane;
+    private final ProgressIndicator progressIndicator;
 
     public CommandService(String command, GridPane commandsPane, ProgressIndicator progressIndicator) {
         this.command = command;

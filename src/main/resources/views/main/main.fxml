@@ -2,13 +2,13 @@
 
 <?import javafx.scene.layout.*?>
 
-<GridPane alignment="CENTER" prefHeight="200.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane alignment="CENTER" hgap="99.0" prefHeight="175.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1">
     <columnConstraints>
-        <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" percentWidth="100.0"/>
+        <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" percentWidth="100.0" />
     </columnConstraints>
     <rowConstraints>
-        <RowConstraints percentHeight="15.0" valignment="TOP"/>
-        <RowConstraints percentHeight="85.0" valignment="CENTER" vgrow="ALWAYS"/>
+        <RowConstraints percentHeight="15.0" valignment="TOP" vgrow="SOMETIMES" />
+        <RowConstraints percentHeight="85.0" valignment="CENTER" vgrow="SOMETIMES" />
     </rowConstraints>
     <fx:include source="menu.fxml" GridPane.rowIndex="0" />
     <fx:include source="commands.fxml" GridPane.rowIndex="1" />

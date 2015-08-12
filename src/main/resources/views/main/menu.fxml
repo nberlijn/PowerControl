@@ -2,18 +2,12 @@
 
 <?import javafx.scene.control.*?>
 
-<MenuBar xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nl.nberlijn.powercontrol.controllers.MenuController">
-    <menus>
-        <Menu mnemonicParsing="false" text="File">
-            <items>
-                <MenuItem mnemonicParsing="false" onAction="#handleSettingsMenuItem" text="Settings" />
-                <MenuItem mnemonicParsing="false" onAction="#handleCloseMenuItem" text="Close" />
-            </items>
-        </Menu>
-        <Menu mnemonicParsing="false" text="Help">
-            <items>
-                <MenuItem mnemonicParsing="false" onAction="#handleAboutMenuItem" text="About" />
-            </items>
-        </Menu>
-    </menus>
+<MenuBar xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nl.nberlijn.powercontrol.controllers.main.MenuController">
+    <Menu mnemonicParsing="false" text="File">
+        <MenuItem mnemonicParsing="false" onAction="#handleSettingsMenuItem" text="Settings"/>
+        <MenuItem mnemonicParsing="false" onAction="#handleCloseMenuItem" text="Close"/>
+    </Menu>
+    <Menu mnemonicParsing="false" text="Help">
+        <MenuItem mnemonicParsing="false" onAction="#handleAboutMenuItem" text="About"/>
+    </Menu>
 </MenuBar>
