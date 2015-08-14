@@ -1,7 +1,6 @@
 package nl.nberlijn.powercontrol.services.command;
 
 import javafx.concurrent.Task;
-
 import javafx.scene.control.Alert;
 import nl.nberlijn.powercontrol.models.CommandModel;
 import nl.nberlijn.powercontrol.ssh.SSHClientExecutor;

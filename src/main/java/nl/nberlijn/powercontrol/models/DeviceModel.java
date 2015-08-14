@@ -11,15 +11,15 @@ public class DeviceModel extends Model {
     public DeviceModel() {
         super(Properties.DEVICE_FILE_PATH);
 
-        name = getProperty("name");
-        host = getProperty("host");
-        port = Integer.valueOf(getProperty("port"));
+        name = getValue("name");
+        host = getValue("host");
+        port = Integer.valueOf(getValue("port"));
     }
 
     public void update() {
-        setProperty("name", name);
-        setProperty("host", host);
-        setProperty("port", String.valueOf(port));
+        setValue("name", name);
+        setValue("host", host);
+        setValue("port", String.valueOf(port));
 
         save();
     }

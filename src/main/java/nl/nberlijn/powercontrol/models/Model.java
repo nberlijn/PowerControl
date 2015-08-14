@@ -23,11 +23,11 @@ abstract class Model {
         }
     }
 
-    String getProperty(String key) {
+    String getValue(String key) {
         return propertiesConfiguration.getString(key);
     }
 
-    void setProperty(String key, Object value) {
+    void setValue(String key, Object value) {
         propertiesConfiguration.setProperty(key, value);
     }
 

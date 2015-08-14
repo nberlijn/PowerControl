@@ -8,7 +8,7 @@ import nl.nberlijn.powercontrol.models.DeviceModel;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class EditDeviceController implements Initializable {
+public class DeviceController implements Initializable {
 
     @FXML
     private TextField nameTextField;

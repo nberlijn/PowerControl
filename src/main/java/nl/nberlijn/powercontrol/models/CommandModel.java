@@ -15,23 +15,23 @@ public class CommandModel extends Model {
     public CommandModel(String select) {
         super(Properties.COMMANDS_DIR_PATH + select + Properties.PROPERTIES_EXTENSION);
 
-        name = getProperty("name");
-        host = getProperty("host");
-        user = getProperty("user");
-        password = getProperty("password");
-        port = Integer.valueOf(getProperty("port"));
-        timeout = Integer.valueOf(getProperty("timeout"));
-        command = getProperty("command");
+        name = getValue("name");
+        host = getValue("host");
+        user = getValue("user");
+        password = getValue("password");
+        port = Integer.valueOf(getValue("port"));
+        timeout = Integer.valueOf(getValue("timeout"));
+        command = getValue("command");
     }
 
     public void update() {
-        setProperty("name", name);
-        setProperty("host", host);
-        setProperty("user", user);
-        setProperty("password", password);
-        setProperty("port", String.valueOf(port));
-        setProperty("timeout", String.valueOf(timeout));
-        setProperty("command", command);
+        setValue("name", name);
+        setValue("host", host);
+        setValue("user", user);
+        setValue("password", password);
+        setValue("port", String.valueOf(port));
+        setValue("timeout", String.valueOf(timeout));
+        setValue("command", command);
 
         save();
     }

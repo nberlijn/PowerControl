@@ -7,16 +7,16 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
-
 import nl.nberlijn.powercontrol.config.App;
 import nl.nberlijn.powercontrol.config.GUI;
 import nl.nberlijn.powercontrol.config.Symbols;
+import nl.nberlijn.powercontrol.config.Views;
 
 public class MenuController {
 
     @FXML
     public void handleSettingsMenuItem() throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource(GUI.SETTINGS_VIEW_FILE_PATH));
+        Parent root = FXMLLoader.load(getClass().getResource(Views.SETTINGS_VIEW_FILE_PATH));
 
         Stage stage = new Stage();
         stage.setResizable(false);

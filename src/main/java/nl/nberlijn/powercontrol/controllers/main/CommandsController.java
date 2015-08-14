@@ -3,7 +3,6 @@ package nl.nberlijn.powercontrol.controllers.main;
 import javafx.fxml.FXML;
 import javafx.scene.control.ProgressIndicator;
 import javafx.scene.layout.GridPane;
-
 import nl.nberlijn.powercontrol.config.Commands;
 import nl.nberlijn.powercontrol.services.command.CommandService;
 

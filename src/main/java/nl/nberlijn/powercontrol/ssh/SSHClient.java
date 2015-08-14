@@ -39,11 +39,11 @@ public class SSHClient implements SSH {
     }
 
     public void execute() throws Exception {
-            ChannelExec channelExec = (ChannelExec) session.openChannel("exec");
-            channelExec.setErrStream(System.err);
-            channelExec.setCommand(command);
-            channelExec.connect();
-            channelExec.disconnect();
+        ChannelExec channelExec = (ChannelExec) session.openChannel("exec");
+        channelExec.setErrStream(System.err);
+        channelExec.setCommand(command);
+        channelExec.connect();
+        channelExec.disconnect();
     }
 
 }

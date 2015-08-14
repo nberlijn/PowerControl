@@ -1,45 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 
-<TabPane prefHeight="600.0" prefWidth="400.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nl.nberlijn.powercontrol.controllers.settings.SettingsController">
-    <Tab text="Device">
-        <AnchorPane>
-            <fx:include source="edit_device.fxml"/>
-        </AnchorPane>
-    </Tab>
-    <Tab text="Commands">
-        <AnchorPane>
-            <Accordion>
-                <panes>
-                    <TitledPane animated="false" text="Power on">
-                        <AnchorPane>
-                            <fx:include fx:id="editPowerOnCommand" source="edit_command.fxml"/>
-                        </AnchorPane>
-                    </TitledPane>
-                    <TitledPane animated="false" text="Power off">
-                        <AnchorPane>
-                            <fx:include fx:id="editPowerOffCommand" source="edit_command.fxml"/>
-                        </AnchorPane>
-                    </TitledPane>
-                    <TitledPane animated="false" text="Reboot">
-                        <AnchorPane>
-                            <fx:include fx:id="editRebootCommand" source="edit_command.fxml"/>
-                        </AnchorPane>
-                    </TitledPane>
-                    <TitledPane animated="false" text="Update">
-                        <AnchorPane>
-                            <fx:include fx:id="editUpdateCommand" source="edit_command.fxml"/>
-                        </AnchorPane>
-                    </TitledPane>
-                    <TitledPane animated="false" text="Clean">
-                        <AnchorPane>
-                            <fx:include fx:id="editCleanCommand" source="edit_command.fxml"/>
-                        </AnchorPane>
-                    </TitledPane>
-                </panes>
-            </Accordion>
-        </AnchorPane>
-    </Tab>
-</TabPane>
+<VBox xmlns:fx="http://javafx.com/fxml/1" prefHeight="475.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/null" fx:controller="nl.nberlijn.powercontrol.controllers.settings.SettingsController">
+    <TabPane tabClosingPolicy="UNAVAILABLE">
+        <Tab text="Device">
+            <AnchorPane>
+                <fx:include source="forms/device.fxml"/>
+            </AnchorPane>
+        </Tab>
+        <Tab text="Commands">
+            <Accordion fx:id="commandsAccordion"/>
+        </Tab>
+    </TabPane>
+    <ButtonBar>
+        <buttons>
+            <Button mnemonicParsing="false" onAction="#handleOkButton" text="OK"/>
+            <Button mnemonicParsing="false" onAction="#handleCancelButton" text="Cancel"/>
+        </buttons>
+        <padding>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0"/>
+        </padding>
+    </ButtonBar>
+</VBox>

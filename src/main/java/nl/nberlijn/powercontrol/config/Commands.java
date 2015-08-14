@@ -8,4 +8,12 @@ public final class Commands {
     public static final String UPDATE = "update";
     public static final String CLEAN = "clean";
 
+    public static final String[] COMMANDS = {
+            "power_on",
+            "power_off",
+            "reboot",
+            "update",
+            "clean"
+    };
+
 }
