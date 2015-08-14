@@ -3,6 +3,7 @@ package nl.nberlijn.powercontrol.controllers.settings;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+
 import nl.nberlijn.powercontrol.models.CommandModel;
 
 public class CommandController {

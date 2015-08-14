@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
+
 import nl.nberlijn.powercontrol.config.Status;
 import nl.nberlijn.powercontrol.models.DeviceModel;
 

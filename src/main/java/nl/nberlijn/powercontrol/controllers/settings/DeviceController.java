@@ -3,6 +3,7 @@ package nl.nberlijn.powercontrol.controllers.settings;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
+
 import nl.nberlijn.powercontrol.models.DeviceModel;
 
 import java.net.URL;

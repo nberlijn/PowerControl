@@ -10,6 +10,7 @@ import javafx.scene.control.TitledPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+
 import nl.nberlijn.powercontrol.config.Commands;
 import nl.nberlijn.powercontrol.config.Views;
 import nl.nberlijn.powercontrol.models.CommandModel;

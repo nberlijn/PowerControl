@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
+
 import nl.nberlijn.powercontrol.config.App;
 import nl.nberlijn.powercontrol.config.GUI;
 import nl.nberlijn.powercontrol.config.Symbols;
