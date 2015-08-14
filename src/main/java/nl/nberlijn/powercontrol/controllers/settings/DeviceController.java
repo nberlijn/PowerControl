@@ -11,13 +11,16 @@ import java.util.ResourceBundle;
 
 public class DeviceController implements Initializable {
 
-    private final DeviceModel deviceModel = new DeviceModel();
     @FXML
     private TextField nameTextField;
+
     @FXML
     private TextField hostTextField;
+
     @FXML
     private TextField portTextField;
+
+    private final DeviceModel deviceModel = new DeviceModel();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

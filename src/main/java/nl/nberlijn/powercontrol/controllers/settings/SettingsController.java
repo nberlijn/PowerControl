@@ -21,9 +21,6 @@ import java.util.ResourceBundle;
 
 public class SettingsController implements Initializable {
 
-    private final String[] commands = Commands.COMMANDS;
-    private final CommandController[] commandController = new CommandController[commands.length];
-
     @FXML
     private GridPane device;
 
@@ -32,6 +29,9 @@ public class SettingsController implements Initializable {
 
     @FXML
     private Accordion commandsAccordion;
+
+    private final String[] commands = Commands.COMMANDS;
+    private final CommandController[] commandController = new CommandController[commands.length];
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
