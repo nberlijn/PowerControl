@@ -16,7 +16,7 @@ public class DeviceModel extends Model {
         port = Integer.valueOf(getValue("port"));
     }
 
-    public void update() {
+    public void store() {
         setValue("name", name);
         setValue("host", host);
         setValue("port", String.valueOf(port));

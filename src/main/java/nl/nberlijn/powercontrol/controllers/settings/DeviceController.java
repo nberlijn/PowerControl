@@ -10,22 +10,27 @@ import java.util.ResourceBundle;
 
 public class DeviceController implements Initializable {
 
+    private final DeviceModel deviceModel = new DeviceModel();
     @FXML
     private TextField nameTextField;
-
     @FXML
     private TextField hostTextField;
-
     @FXML
     private TextField portTextField;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        DeviceModel deviceModel = new DeviceModel();
-
         nameTextField.setText(deviceModel.getName());
         hostTextField.setText(deviceModel.getHost());
         portTextField.setText(String.valueOf(deviceModel.getPort()));
+    }
+
+    public void store() {
+        deviceModel.setName(nameTextField.getText());
+        deviceModel.setHost(hostTextField.getText());
+        deviceModel.setPort(Integer.valueOf(portTextField.getText()));
+
+        deviceModel.store();
     }
 
 }

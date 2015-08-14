@@ -24,7 +24,7 @@ public class CommandModel extends Model {
         command = getValue("command");
     }
 
-    public void update() {
+    public void store() {
         setValue("name", name);
         setValue("host", host);
         setValue("user", user);

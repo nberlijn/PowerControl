@@ -30,6 +30,11 @@ public class CommandController {
 
     private CommandModel commandModel;
 
+    @FXML
+    public void handleTextChanged() {
+        System.out.println("Text changed...");
+    }
+
     public void initializeFields() {
         nameTextField.setEditable(false);
         nameTextField.setDisable(true);
@@ -43,7 +48,7 @@ public class CommandController {
         commandTextField.setText(commandModel.getCommand());
     }
 
-    public void update() {
+    public void store() {
         commandModel.setName(nameTextField.getText());
         commandModel.setHost(hostTextField.getText());
         commandModel.setUser(userTextField.getText());
@@ -52,7 +57,7 @@ public class CommandController {
         commandModel.setTimeout(Integer.valueOf(timeoutTextField.getText()));
         commandModel.setCommand(commandTextField.getText());
 
-        commandModel.update();
+        commandModel.store();
     }
 
     public void setCommandModel(CommandModel commandModel) {

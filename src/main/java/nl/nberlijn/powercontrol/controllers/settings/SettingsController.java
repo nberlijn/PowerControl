@@ -22,6 +22,13 @@ public class SettingsController implements Initializable {
 
     private final String[] commands = Commands.COMMANDS;
     private final CommandController[] commandController = new CommandController[commands.length];
+
+    @FXML
+    private GridPane device;
+
+    @FXML
+    private DeviceController deviceController;
+
     @FXML
     private Accordion commandsAccordion;
 
@@ -51,8 +58,10 @@ public class SettingsController implements Initializable {
 
     @FXML
     public void handleOkButton(ActionEvent actionEvent) {
+        deviceController.store();
+
         for (int i = 0; i < commands.length; i++) {
-            commandController[i].update();
+            commandController[i].store();
         }
 
         closeWindow(actionEvent);

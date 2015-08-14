@@ -2,21 +2,27 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.*?>
 
-<VBox xmlns:fx="http://javafx.com/fxml/1" prefHeight="475.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/null" fx:controller="nl.nberlijn.powercontrol.controllers.settings.SettingsController">
+<GridPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/null" fx:controller="nl.nberlijn.powercontrol.controllers.settings.SettingsController">
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES"/>
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints percentHeight="85.0" vgrow="SOMETIMES"/>
+        <RowConstraints percentHeight="15.0" vgrow="SOMETIMES"/>
+    </rowConstraints>
     <TabPane tabClosingPolicy="UNAVAILABLE">
         <Tab text="Device">
             <AnchorPane>
-                <fx:include source="forms/device.fxml"/>
+                <fx:include fx:id="device" source="forms/device.fxml"/>
             </AnchorPane>
         </Tab>
         <Tab text="Commands">
             <Accordion fx:id="commandsAccordion"/>
         </Tab>
     </TabPane>
-    <ButtonBar>
+    <ButtonBar GridPane.rowIndex="1">
         <buttons>
             <Button mnemonicParsing="false" onAction="#handleOkButton" text="OK"/>
             <Button mnemonicParsing="false" onAction="#handleCancelButton" text="Cancel"/>
@@ -25,4 +31,4 @@
             <Insets bottom="15.0" left="15.0" right="15.0" top="15.0"/>
         </padding>
     </ButtonBar>
-</VBox>
+</GridPane>
