@@ -4,7 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
-import nl.nberlijn.powercontrol.models.CommandModel;
+import nl.nberlijn.powercontrol.models.Command;
 
 /**
  * Class representing a command controller.
@@ -60,7 +60,7 @@ public class CommandController {
     /**
      * The command model.
      */
-    private CommandModel commandModel;
+    private Command command;
 
     /**
      * Initializes the fields with text from the command model.
@@ -69,37 +69,37 @@ public class CommandController {
         nameTextField.setEditable(false);
         nameTextField.setDisable(true);
 
-        nameTextField.setText(commandModel.getName());
-        hostTextField.setText(commandModel.getHost());
-        userTextField.setText(commandModel.getUser());
-        passwordField.setText(commandModel.getPassword());
-        portTextField.setText(String.valueOf(commandModel.getPort()));
-        timeoutTextField.setText(String.valueOf(commandModel.getTimeout()));
-        commandTextField.setText(commandModel.getCommand());
+        nameTextField.setText(command.getName());
+        hostTextField.setText(command.getHost());
+        userTextField.setText(command.getUser());
+        passwordField.setText(command.getPassword());
+        portTextField.setText(String.valueOf(command.getPort()));
+        timeoutTextField.setText(String.valueOf(command.getTimeout()));
+        commandTextField.setText(command.getCommand());
     }
 
     /**
      * Stores the data input from the fields to the command model and finally store it.
      */
     public void store() {
-        commandModel.setName(nameTextField.getText());
-        commandModel.setHost(hostTextField.getText());
-        commandModel.setUser(userTextField.getText());
-        commandModel.setPassword(passwordField.getText());
-        commandModel.setPort(Integer.valueOf(portTextField.getText()));
-        commandModel.setTimeout(Integer.valueOf(timeoutTextField.getText()));
-        commandModel.setCommand(commandTextField.getText());
+        command.setName(nameTextField.getText());
+        command.setHost(hostTextField.getText());
+        command.setUser(userTextField.getText());
+        command.setPassword(passwordField.getText());
+        command.setPort(Integer.valueOf(portTextField.getText()));
+        command.setTimeout(Integer.valueOf(timeoutTextField.getText()));
+        command.setCommand(commandTextField.getText());
 
-        commandModel.store();
+        command.store();
     }
 
     /**
      * Sets the commands model.
      *
-     * @param commandModel The command model
+     * @param command The command model
      */
-    public void setCommandModel(CommandModel commandModel) {
-        this.commandModel = commandModel;
+    public void setCommand(Command command) {
+        this.command = command;
     }
 
 }

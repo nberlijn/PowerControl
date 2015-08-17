@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 
 import nl.nberlijn.powercontrol.config.Commands;
 import nl.nberlijn.powercontrol.config.Views;
-import nl.nberlijn.powercontrol.models.CommandModel;
+import nl.nberlijn.powercontrol.models.Command;
 
 import java.io.IOException;
 import java.net.URL;
@@ -29,28 +29,32 @@ import java.util.ResourceBundle;
 public class SettingsController implements Initializable {
 
     /**
-     * The array commands with commands.
-     */
-    private final String[] commands = Commands.COMMANDS;
-    /**
-     * The array commands controller with command controllers.
-     */
-    private final CommandController[] commandController = new CommandController[commands.length];
-    /**
      * The device.
      */
     @FXML
     private GridPane device;
+
     /**
      * The device controller.
      */
     @FXML
     private DeviceController deviceController;
+
     /**
      * The commands accordion.
      */
     @FXML
     private Accordion commandsAccordion;
+
+    /**
+     * The array commands with commands.
+     */
+    private final String[] commands = Commands.COMMANDS;
+
+    /**
+     * The array commands controller with command controllers.
+     */
+    private final CommandController[] commandController = new CommandController[commands.length];
 
     /**
      * Initializes the settings controller.
@@ -69,14 +73,14 @@ public class SettingsController implements Initializable {
             for (int i = 0; i < commands.length; i++) {
                 FXMLLoader fxmlLoader = new FXMLLoader();
                 GridPane gridPane = fxmlLoader.load(getClass().getResource(Views.COMMAND_FORM_FILE_PATH).openStream());
-                CommandModel commandModel = new CommandModel(commands[i]);
+                Command command = new Command(commands[i]);
 
                 commandController[i] = fxmlLoader.getController();
-                commandController[i].setCommandModel(commandModel);
+                commandController[i].setCommand(command);
                 commandController[i].initializeFields();
 
                 AnchorPane anchorPane = new AnchorPane(gridPane);
-                titledPanes[i] = new TitledPane(commandModel.getName(), anchorPane);
+                titledPanes[i] = new TitledPane(command.getName(), anchorPane);
             }
 
             commandsAccordion.getPanes().addAll(titledPanes);

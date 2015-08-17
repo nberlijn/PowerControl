@@ -12,12 +12,13 @@ import nl.nberlijn.powercontrol.config.Views;
 import java.io.IOException;
 
 /**
- * Class representing the main.
+ * Class representing the commands.
  *
  * @author Nils Berlijn
  * @version 1.0
  * @since 1.0
  */
+@SuppressWarnings("WeakerAccess")
 public class Main extends Application {
 
     /**
@@ -31,18 +32,18 @@ public class Main extends Application {
 
     /**
      * Starts the application.
-     * Loads in the main view and renders it to the screen.
+     * Loads in the commands view and renders it to the screen.
      *
      * @param primaryStage The primary stage
      * @throws IOException
      */
     @Override
     public void start(Stage primaryStage) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource(Views.MAIN_VIEW_FILE_PATH));
+        Parent root = FXMLLoader.load(getClass().getResource(Views.COMMANDS_VIEW_FILE_PATH));
 
         primaryStage.setResizable(false);
-        primaryStage.setTitle(GUI.MAIN_TITLE);
-        primaryStage.setScene(new Scene(root, GUI.MAIN_WIDTH, GUI.MAIN_HEIGHT));
+        primaryStage.setTitle(GUI.COMMANDS_TITLE);
+        primaryStage.setScene(new Scene(root, GUI.COMMANDS_WIDTH, GUI.COMMANDS_HEIGHT));
         primaryStage.show();
     }
 

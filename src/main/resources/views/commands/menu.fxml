@@ -2,7 +2,7 @@
 
 <?import javafx.scene.control.*?>
 
-<MenuBar xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/null" fx:controller="nl.nberlijn.powercontrol.controllers.main.MenuController">
+<MenuBar xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/null" fx:controller="nl.nberlijn.powercontrol.controllers.commands.MenuController">
     <Menu mnemonicParsing="false" text="File">
         <MenuItem mnemonicParsing="false" onAction="#handleSettingsMenuItem" text="Settings"/>
         <MenuItem mnemonicParsing="false" onAction="#handleCloseMenuItem" text="Close"/>

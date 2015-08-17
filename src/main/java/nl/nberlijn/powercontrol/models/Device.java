@@ -9,7 +9,7 @@ import nl.nberlijn.powercontrol.config.Properties;
  * @version 1.0
  * @since 1.0
  */
-public class DeviceModel extends Model {
+public class Device extends Model {
 
     /**
      * The name.
@@ -30,7 +30,7 @@ public class DeviceModel extends Model {
      * The device model constructor.
      * Initializes the device into this model.
      */
-    public DeviceModel() {
+    public Device() {
         super(Properties.DEVICE_FILE_PATH);
 
         name = getValue("name");

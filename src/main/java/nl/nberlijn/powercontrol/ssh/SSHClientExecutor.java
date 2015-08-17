@@ -1,11 +1,11 @@
 package nl.nberlijn.powercontrol.ssh;
 
-import nl.nberlijn.powercontrol.models.CommandModel;
+import nl.nberlijn.powercontrol.models.Command;
 
 public final class SSHClientExecutor extends SSHClient {
 
-    public SSHClientExecutor(CommandModel commandModel) {
-        super(commandModel.getHost(), commandModel.getUser(), commandModel.getPassword(), commandModel.getPort(), commandModel.getTimeout(), commandModel.getCommand());
+    public SSHClientExecutor(Command command) {
+        super(command.getHost(), command.getUser(), command.getPassword(), command.getPort(), command.getTimeout(), command.getCommand());
     }
 
     @Override

@@ -1,4 +1,4 @@
-package nl.nberlijn.powercontrol.controllers.main;
+package nl.nberlijn.powercontrol.controllers.commands;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -7,7 +7,7 @@ import javafx.scene.control.ProgressIndicator;
 import javafx.scene.layout.GridPane;
 
 import nl.nberlijn.powercontrol.config.Commands;
-import nl.nberlijn.powercontrol.services.command.CommandService;
+import nl.nberlijn.powercontrol.services.CommandService;
 
 /**
  * Class representing a commands controller.

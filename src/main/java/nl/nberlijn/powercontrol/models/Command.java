@@ -9,7 +9,7 @@ import nl.nberlijn.powercontrol.config.Properties;
  * @version 1.0
  * @since 1.0
  */
-public class CommandModel extends Model {
+public class Command extends Model {
 
     /**
      * The name.
@@ -52,7 +52,7 @@ public class CommandModel extends Model {
      *
      * @param select The command to select
      */
-    public CommandModel(String select) {
+    public Command(String select) {
         super(Properties.COMMANDS_DIR_PATH + select.replace(" ", "_").toLowerCase() + Properties.PROPERTIES_EXTENSION);
 
         name = getValue("name");

@@ -1,4 +1,4 @@
-package nl.nberlijn.powercontrol.services.command;
+package nl.nberlijn.powercontrol.services;
 
 import javafx.concurrent.Service;
 import javafx.concurrent.Task;

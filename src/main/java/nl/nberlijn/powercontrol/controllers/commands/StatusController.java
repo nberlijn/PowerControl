@@ -1,4 +1,4 @@
-package nl.nberlijn.powercontrol.controllers.main;
+package nl.nberlijn.powercontrol.controllers.commands;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -6,7 +6,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 
 import nl.nberlijn.powercontrol.config.Status;
-import nl.nberlijn.powercontrol.models.DeviceModel;
+import nl.nberlijn.powercontrol.models.Device;
 
 import java.net.Socket;
 import java.net.URL;
@@ -33,15 +33,15 @@ public class StatusController implements Initializable {
      * Initializes the status controller.
      * Makes a new thread for checking the status based on a scheduled period of time.
      *
-     * @param url            The url
+     * @param url The url
      * @param resourceBundle The resource bundle
      */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Executors.newSingleThreadScheduledExecutor().scheduleAtFixedRate(() -> {
-            DeviceModel deviceModel = new DeviceModel();
+            Device device = new Device();
 
-            try (Socket socket = new Socket(deviceModel.getHost(), deviceModel.getPort())) {
+            try (Socket socket = new Socket(device.getHost(), device.getPort())) {
                 statusCircle.setFill(Color.GREEN);
                 socket.close();
             } catch (Exception e) {
