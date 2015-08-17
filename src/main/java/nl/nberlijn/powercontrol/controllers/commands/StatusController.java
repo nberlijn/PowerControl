@@ -33,7 +33,7 @@ public class StatusController implements Initializable {
      * Initializes the status controller.
      * Makes a new thread for checking the status based on a scheduled period of time.
      *
-     * @param url The url
+     * @param url            The url
      * @param resourceBundle The resource bundle
      */
     @Override
