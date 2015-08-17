@@ -3,10 +3,26 @@ package nl.nberlijn.powercontrol.models;
 import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.PropertiesConfiguration;
 
+/**
+ * Class representing a model.
+ *
+ * @author Nils Berlijn
+ * @version 1.0
+ * @since 1.0
+ */
 abstract class Model {
 
+    /**
+     * The properties configuration.
+     */
     private PropertiesConfiguration propertiesConfiguration;
 
+    /**
+     * The model constructor.
+     * Initializes the data from the selected file.
+     *
+     * @param fileName The file name to select the data from
+     */
     Model(String fileName) {
         try {
             propertiesConfiguration = new PropertiesConfiguration(fileName);
@@ -15,6 +31,9 @@ abstract class Model {
         }
     }
 
+    /**
+     * Saves the data.
+     */
     void save() {
         try {
             propertiesConfiguration.save();
@@ -23,10 +42,22 @@ abstract class Model {
         }
     }
 
+    /**
+     * Gets a value.
+     *
+     * @param key The key
+     * @return The value
+     */
     String getValue(String key) {
         return propertiesConfiguration.getString(key);
     }
 
+    /**
+     * Sets a value.
+     *
+     * @param key   The key
+     * @param value The value
+     */
     void setValue(String key, Object value) {
         propertiesConfiguration.setProperty(key, value);
     }

@@ -14,11 +14,28 @@ import java.util.ResourceBundle;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * Class representing a status controller.
+ *
+ * @author Nils Berlijn
+ * @version 1.0
+ * @since 1.0
+ */
 public class StatusController implements Initializable {
 
+    /**
+     * The status circle.
+     */
     @FXML
     private Circle statusCircle;
 
+    /**
+     * Initializes the status controller.
+     * Makes a new thread for checking the status based on a scheduled period of time.
+     *
+     * @param url            The url
+     * @param resourceBundle The resource bundle
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Executors.newSingleThreadScheduledExecutor().scheduleAtFixedRate(() -> {

@@ -19,22 +19,50 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ * Class representing a settings controller.
+ *
+ * @author Nils Berlijn
+ * @version 1.0
+ * @since 1.0
+ */
 public class SettingsController implements Initializable {
 
+    /**
+     * The array commands with commands.
+     */
+    private final String[] commands = Commands.COMMANDS;
+    /**
+     * The array commands controller with command controllers.
+     */
+    private final CommandController[] commandController = new CommandController[commands.length];
+    /**
+     * The device.
+     */
     @FXML
     private GridPane device;
-
+    /**
+     * The device controller.
+     */
     @FXML
     private DeviceController deviceController;
-
+    /**
+     * The commands accordion.
+     */
     @FXML
     private Accordion commandsAccordion;
 
-    private final String[] commands = Commands.COMMANDS;
-    private final CommandController[] commandController = new CommandController[commands.length];
-
+    /**
+     * Initializes the settings controller.
+     * Initialises the device fields and adds the available commands to the commands accordion.
+     *
+     * @param url            The url
+     * @param resourceBundle The resource bundle
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        deviceController.initializeFields();
+
         try {
             TitledPane[] titledPanes = new TitledPane[commands.length];
 
@@ -57,6 +85,12 @@ public class SettingsController implements Initializable {
         }
     }
 
+    /**
+     * Handles the ok button.
+     * Stores all the changes made and closes the window.
+     *
+     * @param actionEvent The action event for handling the button
+     */
     @FXML
     public void handleOkButton(ActionEvent actionEvent) {
         deviceController.store();
@@ -68,11 +102,22 @@ public class SettingsController implements Initializable {
         closeWindow(actionEvent);
     }
 
+    /**
+     * Handles the cancel button.
+     * Cancels current changes and closes the window.
+     *
+     * @param actionEvent The action event for handling the button
+     */
     @FXML
     public void handleCancelButton(ActionEvent actionEvent) {
         closeWindow(actionEvent);
     }
 
+    /**
+     * Closes the window.
+     *
+     * @param actionEvent The action event for handling the button
+     */
     private void closeWindow(ActionEvent actionEvent) {
         ((Stage) ((Node) actionEvent.getSource()).getScene().getWindow()).close();
     }

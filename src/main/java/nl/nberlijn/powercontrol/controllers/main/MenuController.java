@@ -13,10 +13,25 @@ import nl.nberlijn.powercontrol.config.GUI;
 import nl.nberlijn.powercontrol.config.Symbols;
 import nl.nberlijn.powercontrol.config.Views;
 
+import java.io.IOException;
+
+/**
+ * Class representing a menu controller.
+ *
+ * @author Nils Berlijn
+ * @version 1.0
+ * @since 1.0
+ */
 public class MenuController {
 
+    /**
+     * Handles the settings menu item.
+     * Loads in the settings view and renders it to the screen.
+     *
+     * @throws IOException
+     */
     @FXML
-    public void handleSettingsMenuItem() throws Exception {
+    public void handleSettingsMenuItem() throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource(Views.SETTINGS_VIEW_FILE_PATH));
 
         Stage stage = new Stage();
@@ -26,11 +41,19 @@ public class MenuController {
         stage.show();
     }
 
+    /**
+     * Handles the close menu item.
+     * Closes the application.
+     */
     @FXML
     public void handleCloseMenuItem() {
         Platform.exit();
     }
 
+    /**
+     * Handles the about menu item.
+     * Displays an alert window with information about this application to the screen.
+     */
     @FXML
     public void handleAboutMenuItem() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
