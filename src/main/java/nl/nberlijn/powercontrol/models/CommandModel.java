@@ -13,7 +13,7 @@ public class CommandModel extends Model {
     private String command;
 
     public CommandModel(String select) {
-        super(Properties.COMMANDS_DIR_PATH + select + Properties.PROPERTIES_EXTENSION);
+        super(Properties.COMMANDS_DIR_PATH + select.replace(" ", "_").toLowerCase() + Properties.PROPERTIES_EXTENSION);
 
         name = getValue("name");
         host = getValue("host");

@@ -1,6 +1,8 @@
 package nl.nberlijn.powercontrol.controllers.main;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.ProgressIndicator;
 import javafx.scene.layout.GridPane;
 
@@ -16,32 +18,15 @@ public class CommandsController {
     private ProgressIndicator progressIndicator;
 
     @FXML
-    public void handlePowerOnButton() {
-        handleCommand(Commands.POWER_ON);
-    }
+    public void handleCommandButton(ActionEvent actionEvent) {
+        Button commandButton = (Button) actionEvent.getSource();
+        String[] commands = Commands.COMMANDS;
 
-    @FXML
-    public void handlePowerOffButton() {
-        handleCommand(Commands.POWER_OFF);
-    }
-
-    @FXML
-    public void handleUpdateButton() {
-        handleCommand(Commands.UPDATE);
-    }
-
-    @FXML
-    public void handleRebootButton() {
-        handleCommand(Commands.REBOOT);
-    }
-
-    @FXML
-    public void handleCleanButton() {
-        handleCommand(Commands.CLEAN);
-    }
-
-    private void handleCommand(String command) {
-        new CommandService(command, commandsPane, progressIndicator).start();
+        for (String command : commands) {
+            if (command.equals(commandButton.getText())) {
+                new CommandService(command, commandsPane, progressIndicator).start();
+            }
+        }
     }
 
 }

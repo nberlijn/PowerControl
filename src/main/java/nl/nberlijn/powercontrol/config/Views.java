@@ -4,8 +4,8 @@ public class Views {
 
     public static final String MAIN_FILE = "main";
     public static final String SETTINGS_FILE = "settings";
-    public static final String DEVICE_FORM_FILE = "device";
-    public static final String COMMAND_FORM_FILE = "commands";
+    public static final String DEVICE_FORM_FILE = "device_form";
+    public static final String COMMAND_FORM_FILE = "commands_form";
 
     public static final String MAIN_VIEWS_DIR = "main";
     public static final String SETTINGS_VIEWS_DIR = "settings";

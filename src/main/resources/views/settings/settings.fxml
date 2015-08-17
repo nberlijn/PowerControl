@@ -15,7 +15,7 @@
     <TabPane tabClosingPolicy="UNAVAILABLE">
         <Tab text="Device">
             <AnchorPane>
-                <fx:include fx:id="device" source="forms/device.fxml"/>
+                <fx:include fx:id="device" source="forms/device_form.fxml"/>
             </AnchorPane>
         </Tab>
         <Tab text="Commands">

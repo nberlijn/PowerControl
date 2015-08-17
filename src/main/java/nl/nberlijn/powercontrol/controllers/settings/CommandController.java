@@ -31,11 +31,6 @@ public class CommandController {
 
     private CommandModel commandModel;
 
-    @FXML
-    public void handleTextChanged() {
-        System.out.println("Text changed...");
-    }
-
     public void initializeFields() {
         nameTextField.setEditable(false);
         nameTextField.setDisable(true);

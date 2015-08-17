@@ -29,7 +29,6 @@ public class MenuController {
     @FXML
     public void handleCloseMenuItem() {
         Platform.exit();
-        System.exit(0);
     }
 
     @FXML
