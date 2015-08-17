@@ -21,7 +21,7 @@ import java.io.IOException;
 public class Main extends Application {
 
     /**
-     * The main method to start the application.
+     * Starts the application.
      *
      * @param args The arguments
      */
@@ -30,7 +30,7 @@ public class Main extends Application {
     }
 
     /**
-     * The start method of the application.
+     * Starts the application.
      * Loads in the main view and renders it to the screen.
      *
      * @param primaryStage The primary stage
