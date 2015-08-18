@@ -6,12 +6,13 @@ import javafx.scene.control.TextField;
 import nl.nberlijn.powercontrol.models.Device;
 
 /**
- * Class representing a device controller.
+ * Class representing the device controller.
  *
  * @author Nils Berlijn
  * @version 1.0
  * @since 1.0
  */
+@SuppressWarnings("unused")
 public class DeviceController {
 
     /**

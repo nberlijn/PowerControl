@@ -7,12 +7,13 @@ import javafx.scene.control.TextField;
 import nl.nberlijn.powercontrol.models.Command;
 
 /**
- * Class representing a command controller.
+ * Class representing the command controller.
  *
  * @author Nils Berlijn
  * @version 1.0
  * @since 1.0
  */
+@SuppressWarnings("unused")
 public class CommandController {
 
     /**

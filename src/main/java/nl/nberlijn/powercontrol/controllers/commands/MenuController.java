@@ -16,12 +16,13 @@ import nl.nberlijn.powercontrol.config.Views;
 import java.io.IOException;
 
 /**
- * Class representing a menu controller.
+ * Class representing the menu controller.
  *
  * @author Nils Berlijn
  * @version 1.0
  * @since 1.0
  */
+@SuppressWarnings("unused")
 public class MenuController {
 
     /**

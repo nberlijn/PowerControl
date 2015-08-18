@@ -12,7 +12,7 @@ import nl.nberlijn.powercontrol.config.Views;
 import java.io.IOException;
 
 /**
- * Class representing the commands.
+ * Class representing the main.
  *
  * @author Nils Berlijn
  * @version 1.0

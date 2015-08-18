@@ -20,12 +20,13 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 /**
- * Class representing a settings controller.
+ * Class representing the settings controller.
  *
  * @author Nils Berlijn
  * @version 1.0
  * @since 1.0
  */
+@SuppressWarnings("unused")
 public class SettingsController implements Initializable {
 
     /**
@@ -47,12 +48,12 @@ public class SettingsController implements Initializable {
     private Accordion commandsAccordion;
 
     /**
-     * The array commands with commands.
+     * The array commands.
      */
     private final String[] commands = Commands.COMMANDS;
 
     /**
-     * The array commands controller with command controllers.
+     * The array commands controller.
      */
     private final CommandController[] commandController = new CommandController[commands.length];
 

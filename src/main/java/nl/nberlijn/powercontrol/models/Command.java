@@ -47,34 +47,41 @@ public class Command extends Model {
     private String command;
 
     /**
-     * The command model constructor.
+     * The selectedCommand command.
+     */
+    private final String selectedCommand;
+
+    /**
+     * A command model constructor.
      * Initializes the selected command into this model.
      *
-     * @param select The command to select
+     * @param selectedCommand The selected command
      */
-    public Command(String select) {
-        super(Properties.COMMANDS_DIR_PATH + select.replace(" ", "_").toLowerCase() + Properties.PROPERTIES_EXTENSION);
+    public Command(String selectedCommand) {
+        super(Properties.COMMANDS_FILE_PATH);
 
-        name = getValue("name");
-        host = getValue("host");
-        user = getValue("user");
-        password = getValue("password");
-        port = Integer.valueOf(getValue("port"));
-        timeout = Integer.valueOf(getValue("timeout"));
-        command = getValue("command");
+        this.selectedCommand = selectedCommand.replace(" ", "_").toLowerCase();
+
+        name = getValue(this.selectedCommand + ".name");
+        host = getValue(this.selectedCommand + ".host");
+        user = getValue(this.selectedCommand + ".user");
+        password = getValue(this.selectedCommand + ".password");
+        port = Integer.valueOf(getValue(this.selectedCommand + ".port"));
+        timeout = Integer.valueOf(getValue(this.selectedCommand + ".timeout"));
+        command = getValue(this.selectedCommand + ".command");
     }
 
     /**
      * Stores the data from this model.
      */
     public void store() {
-        setValue("name", name);
-        setValue("host", host);
-        setValue("user", user);
-        setValue("password", password);
-        setValue("port", String.valueOf(port));
-        setValue("timeout", String.valueOf(timeout));
-        setValue("command", command);
+        setValue(selectedCommand + ".name", name);
+        setValue(selectedCommand + ".host", host);
+        setValue(selectedCommand + ".user", user);
+        setValue(selectedCommand + ".password", password);
+        setValue(selectedCommand + ".port", String.valueOf(port));
+        setValue(selectedCommand + ".timeout", String.valueOf(timeout));
+        setValue(selectedCommand + ".command", command);
 
         save();
     }

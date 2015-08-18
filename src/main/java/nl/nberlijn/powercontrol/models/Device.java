@@ -27,7 +27,7 @@ public class Device extends Model {
     private Integer port;
 
     /**
-     * The device model constructor.
+     * A device model constructor.
      * Initializes the device into this model.
      */
     public Device() {

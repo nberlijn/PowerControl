@@ -1,15 +1,30 @@
-package nl.nberlijn.powercontrol.services;
+package nl.nberlijn.powercontrol.services.command;
 
 import javafx.concurrent.Task;
 import javafx.scene.control.Alert;
 
 import nl.nberlijn.powercontrol.models.Command;
-import nl.nberlijn.powercontrol.ssh.SSHClientExecutor;
 
+/**
+ * Class representing a command task.
+ *
+ * @author Nils Berlijn
+ * @version 1.0
+ * @since 1.0
+ */
 class CommandTask extends Task<Boolean> {
 
+    /**
+     * The command model.
+     */
     private final Command command;
 
+    /**
+     * A command task constructor.
+     * Initializes the command model and initializes the on succeeded event.
+     *
+     * @param command The command model
+     */
     public CommandTask(String command) {
         this.command = new Command(command);
 
@@ -30,15 +45,16 @@ class CommandTask extends Task<Boolean> {
         });
     }
 
+    /**
+     * Calls a service.
+     * Tries to execute a new command executor.
+     *
+     * @return If the call has been succeeded
+     * @see CommandExecutor
+     */
     @Override
     protected Boolean call() {
-        try {
-            new SSHClientExecutor(command).execute();
-        } catch (Exception e) {
-            return false;
-        }
-
-        return true;
+        return new CommandExecutor(command).execute();
     }
 
 }

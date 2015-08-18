@@ -7,15 +7,16 @@ import javafx.scene.control.ProgressIndicator;
 import javafx.scene.layout.GridPane;
 
 import nl.nberlijn.powercontrol.config.Commands;
-import nl.nberlijn.powercontrol.services.CommandService;
+import nl.nberlijn.powercontrol.services.command.CommandService;
 
 /**
- * Class representing a commands controller.
+ * Class representing the commands controller.
  *
  * @author Nils Berlijn
  * @version 1.0
  * @since 1.0
  */
+@SuppressWarnings("unused")
 public class CommandsController {
 
     /**
@@ -35,6 +36,7 @@ public class CommandsController {
      * Starts a new command service based on the pressed command button.
      *
      * @param actionEvent The action event for handling the button
+     * @see CommandService
      */
     @FXML
     public void handleCommandButton(ActionEvent actionEvent) {

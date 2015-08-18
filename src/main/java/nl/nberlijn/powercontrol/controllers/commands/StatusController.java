@@ -15,12 +15,14 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Class representing a status controller.
+ * Class representing the status controller.
  *
  * @author Nils Berlijn
  * @version 1.0
  * @since 1.0
  */
+@SuppressWarnings("unused")
+
 public class StatusController implements Initializable {
 
     /**

@@ -18,8 +18,8 @@ abstract class Model {
     private PropertiesConfiguration propertiesConfiguration;
 
     /**
-     * The model constructor.
-     * Initializes the data from the selected file.
+     * A model constructor.
+     * Initializes the data from the selected file into this model.
      *
      * @param fileName The file name to select the data from
      */
