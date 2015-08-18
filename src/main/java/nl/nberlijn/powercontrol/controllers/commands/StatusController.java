@@ -22,7 +22,6 @@ import java.util.concurrent.TimeUnit;
  * @since 1.0
  */
 @SuppressWarnings("unused")
-
 public class StatusController implements Initializable {
 
     /**
