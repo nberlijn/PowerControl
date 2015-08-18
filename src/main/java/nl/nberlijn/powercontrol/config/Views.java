@@ -10,30 +10,7 @@ package nl.nberlijn.powercontrol.config;
 @SuppressWarnings("WeakerAccess")
 public class Views {
 
-    /**
-     * The views extension.
-     */
-    public static final String VIEWS_EXTENSION = ".fxml";
-
-    /**
-     * The commands file.
-     */
-    public static final String COMMANDS_FILE = "commands";
-
-    /**
-     * The settings file.
-     */
-    public static final String SETTINGS_FILE = "settings";
-
-    /**
-     * The device form file.
-     */
-    public static final String DEVICE_FORM_FILE = "device_form";
-
-    /**
-     * The command form file.
-     */
-    public static final String COMMAND_FORM_FILE = "commands_form";
+    /* Directories */
 
     /**
      * The views directory.
@@ -55,6 +32,37 @@ public class Views {
      */
     public static final String SETTINGS_VIEWS_FORMS_DIR = "forms";
 
+    /* Files */
+
+    /**
+     * The commands file.
+     */
+    public static final String COMMANDS_FILE = "commands";
+
+    /**
+     * The settings file.
+     */
+    public static final String SETTINGS_FILE = "settings";
+
+    /**
+     * The device form file.
+     */
+    public static final String DEVICE_FORM_FILE = "device_form";
+
+    /**
+     * The command form file.
+     */
+    public static final String COMMAND_FORM_FILE = "commands_form";
+
+    /* Extensions */
+
+    /**
+     * The views extension.
+     */
+    public static final String VIEWS_EXTENSION = ".fxml";
+
+    /* Directory paths */
+
     /**
      * The views directory path.
      */
@@ -74,6 +82,8 @@ public class Views {
      * The settings views forms directory path.
      */
     public static final String SETTINGS_VIEWS_FORMS_DIR_PATH = SETTINGS_VIEWS_DIR_PATH + SETTINGS_VIEWS_FORMS_DIR + "/";
+
+    /* File paths */
 
     /**
      * The commands view file path.

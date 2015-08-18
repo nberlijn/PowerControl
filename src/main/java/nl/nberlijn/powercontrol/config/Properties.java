@@ -10,10 +10,14 @@ package nl.nberlijn.powercontrol.config;
 @SuppressWarnings("WeakerAccess")
 public final class Properties {
 
+    /* Directories */
+
     /**
-     * The properties extension.
+     * The properties directory.
      */
-    public static final String PROPERTIES_EXTENSION = ".properties";
+    public static final String PROPERTIES_DIR = "properties";
+
+    /* Files */
 
     /**
      * The device file.
@@ -25,15 +29,21 @@ public final class Properties {
      */
     public static final String COMMANDS_FILE = "commands";
 
+    /* Extensions */
+
     /**
-     * The properties directory.
+     * The properties extension.
      */
-    public static final String PROPERTIES_DIR = "properties";
+    public static final String PROPERTIES_EXTENSION = ".properties";
+
+    /* Directory paths */
 
     /**
      * The properties directory path.
      */
     public static final String PROPERTIES_DIR_PATH = PROPERTIES_DIR + "/";
+
+    /* File paths */
 
     /**
      * The device file path.
