@@ -9,7 +9,7 @@ import javafx.scene.layout.GridPane;
 import nl.nberlijn.powercontrol.objects.Command;
 import nl.nberlijn.powercontrol.models.CommandsModel;
 import nl.nberlijn.powercontrol.objects.Commands;
-import nl.nberlijn.powercontrol.kernel.services.CommandService;
+import nl.nberlijn.powercontrol.services.CommandService;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package nl.nberlijn.powercontrol.kernel.services.command;
+package nl.nberlijn.powercontrol.services.command;
 
 import javafx.concurrent.Task;
 import javafx.scene.control.Alert;
