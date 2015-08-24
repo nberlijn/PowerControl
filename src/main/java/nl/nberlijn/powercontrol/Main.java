@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 
 import nl.nberlijn.powercontrol.config.GUI;
 import nl.nberlijn.powercontrol.config.Views;
+import nl.nberlijn.powercontrol.kernel.Kernel;
 
 import java.io.IOException;
 
@@ -19,14 +20,16 @@ import java.io.IOException;
  * @since 1.0
  */
 @SuppressWarnings("WeakerAccess")
-public class Main extends Application {
+public final class Main extends Application {
 
     /**
      * Starts the application.
      *
      * @param args The arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
+        new Kernel();
+
         launch(args);
     }
 

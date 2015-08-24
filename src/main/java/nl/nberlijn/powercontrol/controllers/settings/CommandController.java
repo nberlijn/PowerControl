@@ -4,7 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
-import nl.nberlijn.powercontrol.models.Command;
+import nl.nberlijn.powercontrol.objects.Command;
 
 /**
  * Class representing the command controller.
@@ -58,15 +58,20 @@ public class CommandController {
     @FXML
     private TextField commandTextField;
 
-    /**
-     * The command model.
-     */
-    private Command command;
+    public Command getFields() {
+        Command command = new Command();
+        command.setName(nameTextField.getText());
+        command.setHost(hostTextField.getText());
+        command.setUser(userTextField.getText());
+        command.setPassword(passwordField.getText());
+        command.setPort(Integer.valueOf(portTextField.getText()));
+        command.setTimeout(Integer.valueOf(timeoutTextField.getText()));
+        command.setCommand(commandTextField.getText());
 
-    /**
-     * Initializes the fields with text from the command model.
-     */
-    public void initializeFields() {
+        return command;
+    }
+
+    public void setFields(Command command) {
         nameTextField.setEditable(false);
         nameTextField.setDisable(true);
 
@@ -77,30 +82,6 @@ public class CommandController {
         portTextField.setText(String.valueOf(command.getPort()));
         timeoutTextField.setText(String.valueOf(command.getTimeout()));
         commandTextField.setText(command.getCommand());
-    }
-
-    /**
-     * Stores the data input from the fields to the command model and finally store it.
-     */
-    public void store() {
-        command.setName(nameTextField.getText());
-        command.setHost(hostTextField.getText());
-        command.setUser(userTextField.getText());
-        command.setPassword(passwordField.getText());
-        command.setPort(Integer.valueOf(portTextField.getText()));
-        command.setTimeout(Integer.valueOf(timeoutTextField.getText()));
-        command.setCommand(commandTextField.getText());
-
-        command.store();
-    }
-
-    /**
-     * Sets the commands model.
-     *
-     * @param command The command model
-     */
-    public void setCommand(Command command) {
-        this.command = command;
     }
 
 }

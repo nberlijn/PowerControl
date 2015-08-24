@@ -1,9 +1,8 @@
-package nl.nberlijn.powercontrol.services.command;
+package nl.nberlijn.powercontrol.kernel.services.command;
 
 import javafx.concurrent.Task;
 import javafx.scene.control.Alert;
-
-import nl.nberlijn.powercontrol.models.Command;
+import nl.nberlijn.powercontrol.objects.Command;
 
 /**
  * Class representing a command task.
@@ -12,7 +11,7 @@ import nl.nberlijn.powercontrol.models.Command;
  * @version 1.0
  * @since 1.0
  */
-class CommandTask extends Task<Boolean> {
+public class CommandTask extends Task<Boolean> {
 
     /**
      * The command model.
@@ -25,8 +24,8 @@ class CommandTask extends Task<Boolean> {
      *
      * @param command The command model
      */
-    public CommandTask(String command) {
-        this.command = new Command(command);
+    public CommandTask(Command command) {
+        this.command = command;
 
         setOnSucceeded(event -> {
             if (getValue().equals(true)) {

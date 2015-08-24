@@ -7,7 +7,6 @@ package nl.nberlijn.powercontrol.config;
  * @version 1.0
  * @since 1.0
  */
-@SuppressWarnings("WeakerAccess")
 public final class Status {
 
     /**

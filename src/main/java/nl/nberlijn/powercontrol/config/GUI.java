@@ -7,7 +7,6 @@ package nl.nberlijn.powercontrol.config;
  * @version 1.0
  * @since 1.0
  */
-@SuppressWarnings("WeakerAccess")
 public final class GUI {
 
     /* Commands */
@@ -25,7 +24,7 @@ public final class GUI {
     /**
      * The commands height.
      */
-    public static final Integer COMMANDS_HEIGHT = 175;
+    public static final Integer COMMANDS_HEIGHT = 125;
 
     /* Settings */
 

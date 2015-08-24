@@ -3,7 +3,7 @@ package nl.nberlijn.powercontrol.controllers.settings;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
-import nl.nberlijn.powercontrol.models.Device;
+import nl.nberlijn.powercontrol.objects.Device;
 
 /**
  * Class representing the device controller.
@@ -33,29 +33,19 @@ public class DeviceController {
     @FXML
     private TextField portTextField;
 
-    /**
-     * The device model.
-     */
-    private final Device device = new Device();
-
-    /**
-     * Initializes the fields with text from the device model.
-     */
-    public void initializeFields() {
-        nameTextField.setText(device.getName());
-        hostTextField.setText(device.getHost());
-        portTextField.setText(String.valueOf(device.getPort()));
-    }
-
-    /**
-     * Stores the data input from the fields to the device model and finally store it.
-     */
-    public void store() {
+    public Device getFields() {
+        Device device = new Device();
         device.setName(nameTextField.getText());
         device.setHost(hostTextField.getText());
         device.setPort(Integer.valueOf(portTextField.getText()));
 
-        device.store();
+        return device;
+    }
+
+    public void setFields(Device device) {
+        nameTextField.setText(device.getName());
+        hostTextField.setText(device.getHost());
+        portTextField.setText(String.valueOf(device.getPort()));
     }
 
 }

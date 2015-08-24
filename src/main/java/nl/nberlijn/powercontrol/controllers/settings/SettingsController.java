@@ -11,13 +11,19 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
-import nl.nberlijn.powercontrol.config.Commands;
 import nl.nberlijn.powercontrol.config.Views;
-import nl.nberlijn.powercontrol.models.Command;
+import nl.nberlijn.powercontrol.objects.Command;
+import nl.nberlijn.powercontrol.models.CommandsModel;
+import nl.nberlijn.powercontrol.objects.Commands;
+import nl.nberlijn.powercontrol.objects.Device;
+import nl.nberlijn.powercontrol.models.DeviceModel;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
+import java.util.stream.Collectors;
 
 /**
  * Class representing the settings controller.
@@ -47,15 +53,11 @@ public class SettingsController implements Initializable {
     @FXML
     private Accordion commandsAccordion;
 
-    /**
-     * The array commands.
-     */
-    private final String[] commands = Commands.COMMANDS;
+    private DeviceModel deviceModel = new DeviceModel();
 
-    /**
-     * The array commands controller.
-     */
-    private final CommandController[] commandController = new CommandController[commands.length];
+    private CommandsModel commandsModel = new CommandsModel();
+
+    private List<CommandController> commandControllerList = new ArrayList<>();
 
     /**
      * Initializes the settings controller.
@@ -66,25 +68,30 @@ public class SettingsController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        deviceController.initializeFields();
+        deviceController.setFields(deviceModel.getDevice());
+
+        Commands commands = commandsModel.getCommands();
+        List<Command> commandList = commands.getCommands();
 
         try {
-            TitledPane[] titledPanes = new TitledPane[commands.length];
+            List<TitledPane> titledPaneList = new ArrayList<>();
 
-            for (int i = 0; i < commands.length; i++) {
+            for (Command command : commandList) {
                 FXMLLoader fxmlLoader = new FXMLLoader();
+
                 GridPane gridPane = fxmlLoader.load(getClass().getResource(Views.COMMAND_FORM_FILE_PATH).openStream());
-                Command command = new Command(commands[i]);
-
-                commandController[i] = fxmlLoader.getController();
-                commandController[i].setCommand(command);
-                commandController[i].initializeFields();
-
                 AnchorPane anchorPane = new AnchorPane(gridPane);
-                titledPanes[i] = new TitledPane(command.getName(), anchorPane);
+                TitledPane titledPane = new TitledPane(command.getName(), anchorPane);
+
+                titledPaneList.add(titledPane);
+
+                CommandController commandController = fxmlLoader.getController();
+                commandController.setFields(command);
+
+                commandControllerList.add(commandController);
             }
 
-            commandsAccordion.getPanes().addAll(titledPanes);
+            commandsAccordion.getPanes().addAll(titledPaneList);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -98,11 +105,16 @@ public class SettingsController implements Initializable {
      */
     @FXML
     public void handleOkButton(ActionEvent actionEvent) {
-        deviceController.store();
+        Device device = deviceController.getFields();
+        deviceModel.updateDevice(device);
 
-        for (int i = 0; i < commands.length; i++) {
-            commandController[i].store();
-        }
+        Commands commands = new Commands();
+        List<Command> commandList = commandControllerList.stream().map(CommandController::getFields).collect(Collectors.toList());
+        commands.setCommands(commandList);
+        commandsModel.updateCommands(commands);
+
+        deviceModel.store();
+        commandsModel.store();
 
         closeWindow(actionEvent);
     }

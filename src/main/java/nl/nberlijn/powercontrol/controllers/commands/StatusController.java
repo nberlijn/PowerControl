@@ -6,7 +6,8 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 
 import nl.nberlijn.powercontrol.config.Status;
-import nl.nberlijn.powercontrol.models.Device;
+import nl.nberlijn.powercontrol.objects.Device;
+import nl.nberlijn.powercontrol.models.DeviceModel;
 
 import java.net.Socket;
 import java.net.URL;
@@ -31,6 +32,11 @@ public class StatusController implements Initializable {
     private Circle statusCircle;
 
     /**
+     * The device model.
+     */
+    private DeviceModel deviceModel = new DeviceModel();
+
+    /**
      * Initializes the status controller.
      * Makes a new thread for checking the status based on a scheduled period of time.
      *
@@ -40,7 +46,7 @@ public class StatusController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Executors.newSingleThreadScheduledExecutor().scheduleAtFixedRate(() -> {
-            Device device = new Device();
+            Device device = deviceModel.getDevice();
 
             try (Socket socket = new Socket(device.getHost(), device.getPort())) {
                 statusCircle.setFill(Color.GREEN);

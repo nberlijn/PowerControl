@@ -1,9 +1,11 @@
-package nl.nberlijn.powercontrol.services.command;
+package nl.nberlijn.powercontrol.kernel.services;
 
 import javafx.concurrent.Service;
 import javafx.concurrent.Task;
 import javafx.scene.control.ProgressIndicator;
 import javafx.scene.layout.GridPane;
+import nl.nberlijn.powercontrol.objects.Command;
+import nl.nberlijn.powercontrol.kernel.services.command.CommandTask;
 
 /**
  * Class representing a command service.
@@ -17,7 +19,7 @@ public class CommandService extends Service<Boolean> {
     /**
      * The command.
      */
-    private final String command;
+    private final Command command;
 
     /**
      * The commands pane.
@@ -37,7 +39,7 @@ public class CommandService extends Service<Boolean> {
      * @param commandsPane      The commands pane
      * @param progressIndicator The progress indicator
      */
-    public CommandService(String command, GridPane commandsPane, ProgressIndicator progressIndicator) {
+    public CommandService(Command command, GridPane commandsPane, ProgressIndicator progressIndicator) {
         this.command = command;
         this.commandsPane = commandsPane;
         this.progressIndicator = progressIndicator;
