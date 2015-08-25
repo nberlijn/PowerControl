@@ -2,6 +2,7 @@ package nl.nberlijn.powercontrol.kernel.seeder;
 
 import nl.nberlijn.powercontrol.kernel.config.Extensions;
 import nl.nberlijn.powercontrol.kernel.config.Symbols;
+
 import org.reflections.Reflections;
 
 import java.io.File;
