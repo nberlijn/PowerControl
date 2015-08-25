@@ -15,6 +15,7 @@ public final class Kernel {
 
     /**
      * Starts the kernel.
+     * Starts the kernel modules.
      */
     public static void start() {
         new SeedingMachine().seed(SEEDS_PACKAGE, SEEDS_DIR_PATH);

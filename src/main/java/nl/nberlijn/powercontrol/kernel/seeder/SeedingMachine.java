@@ -20,7 +20,7 @@ public class SeedingMachine {
                 try {
                     Seeder seeder = (Seeder) seed.newInstance();
                     seeding(seeder, file);
-                } catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
+                } catch (InstantiationException | IllegalAccessException e) {
                     e.printStackTrace();
                 }
             }
@@ -41,7 +41,7 @@ public class SeedingMachine {
         return new File(seedFilePath);
     }
 
-    private void seeding(Seeder seeder, File file) throws IllegalAccessException, ClassNotFoundException, InstantiationException {
+    private void seeding(Seeder seeder, File file) {
         Seeding seeding = new Seeding(seeder, file);
         Thread thread = new Thread(seeding);
         thread.start();

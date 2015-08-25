@@ -17,7 +17,6 @@ import static nl.nberlijn.powercontrol.config.Views.*;
  * @version 1.0
  * @since 1.0
  */
-@SuppressWarnings("WeakerAccess")
 public final class GUI extends Application {
 
     /**

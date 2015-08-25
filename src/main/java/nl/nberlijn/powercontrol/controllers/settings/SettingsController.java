@@ -53,11 +53,11 @@ public class SettingsController implements Initializable {
     @FXML
     private Accordion commandsAccordion;
 
-    private DeviceModel deviceModel = new DeviceModel();
+    private final DeviceModel deviceModel = new DeviceModel();
 
-    private CommandsModel commandsModel = new CommandsModel();
+    private final CommandsModel commandsModel = new CommandsModel();
 
-    private List<CommandController> commandControllerList = new ArrayList<>();
+    private final List<CommandController> commandControllerList = new ArrayList<>();
 
     /**
      * Initializes the settings controller.

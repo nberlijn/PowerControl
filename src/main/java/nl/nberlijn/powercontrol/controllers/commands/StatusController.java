@@ -34,7 +34,7 @@ public class StatusController implements Initializable {
     /**
      * The device model.
      */
-    private DeviceModel deviceModel = new DeviceModel();
+    private final DeviceModel deviceModel = new DeviceModel();
 
     /**
      * Initializes the status controller.

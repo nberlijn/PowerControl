@@ -6,12 +6,12 @@ import nl.nberlijn.powercontrol.kernel.parsers.JAXBParser;
 
 import java.io.File;
 
-public class Seeding implements Runnable {
+class Seeding implements Runnable {
 
-    private Seeder seed;
-    private File file;
+    private final Seeder seed;
+    private final File file;
 
-    public Seeding(Seeder seed, File file) throws IllegalAccessException, InstantiationException, ClassNotFoundException {
+    public Seeding(Seeder seed, File file) {
         this.seed = seed;
         this.file = file;
     }

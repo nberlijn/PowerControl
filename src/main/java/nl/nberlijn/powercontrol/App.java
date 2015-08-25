@@ -4,14 +4,13 @@ import nl.nberlijn.powercontrol.gui.GUI;
 import nl.nberlijn.powercontrol.kernel.Kernel;
 
 /**
- * Class representing the main.
+ * Class representing the app.
  *
  * @author Nils Berlijn
  * @version 1.0
  * @since 1.0
  */
-@SuppressWarnings("WeakerAccess")
-public final class App {
+final class App {
 
     /**
      * Starts the application.
