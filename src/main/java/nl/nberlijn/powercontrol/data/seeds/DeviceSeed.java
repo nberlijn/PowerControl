@@ -1,10 +1,11 @@
-package nl.nberlijn.powercontrol.seeds;
+package nl.nberlijn.powercontrol.data.seeds;
 
-import nl.nberlijn.powercontrol.objects.Device;
+import nl.nberlijn.powercontrol.data.objects.Device;
 import nl.nberlijn.powercontrol.kernel.seeder.Seed;
 import nl.nberlijn.powercontrol.kernel.seeder.Seeder;
 
-@Seed(location = "storage")
+@Seed
+@SuppressWarnings("unused")
 public class DeviceSeed implements Seeder<Device> {
 
     @Override

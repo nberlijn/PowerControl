@@ -12,11 +12,11 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 import nl.nberlijn.powercontrol.config.Views;
-import nl.nberlijn.powercontrol.objects.Command;
-import nl.nberlijn.powercontrol.models.CommandsModel;
-import nl.nberlijn.powercontrol.objects.Commands;
-import nl.nberlijn.powercontrol.objects.Device;
-import nl.nberlijn.powercontrol.models.DeviceModel;
+import nl.nberlijn.powercontrol.data.objects.Command;
+import nl.nberlijn.powercontrol.data.models.CommandsModel;
+import nl.nberlijn.powercontrol.data.objects.Commands;
+import nl.nberlijn.powercontrol.data.objects.Device;
+import nl.nberlijn.powercontrol.data.models.DeviceModel;
 
 import java.io.IOException;
 import java.net.URL;

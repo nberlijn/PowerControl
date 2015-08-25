@@ -7,6 +7,7 @@ package nl.nberlijn.powercontrol.config;
  * @version 1.0
  * @since 1.0
  */
+@SuppressWarnings("unused")
 public final class App {
 
     /**
@@ -23,5 +24,10 @@ public final class App {
      * The version.
      */
     public static final Double VERSION = 1.0;
+
+    /**
+     * The classpath.
+     */
+    public static final String CLASSPATH = "nl.nberlijn.powercontrol";
 
 }

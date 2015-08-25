@@ -1,4 +1,4 @@
-package nl.nberlijn.powercontrol.config;
+package nl.nberlijn.powercontrol.kernel.config;
 
 /**
  * Class representing the status config.
@@ -7,6 +7,7 @@ package nl.nberlijn.powercontrol.config;
  * @version 1.0
  * @since 1.0
  */
+@SuppressWarnings("unused")
 public final class Status {
 
     /**

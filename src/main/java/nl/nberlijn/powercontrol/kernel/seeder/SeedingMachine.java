@@ -1,49 +1,50 @@
 package nl.nberlijn.powercontrol.kernel.seeder;
 
+import nl.nberlijn.powercontrol.kernel.config.Extensions;
+import nl.nberlijn.powercontrol.kernel.config.Symbols;
+import org.reflections.Reflections;
+
 import java.io.File;
+import java.util.Set;
 
 public class SeedingMachine {
 
-    public SeedingMachine() {
-        try {
-            checkFiles();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+    public void seed(String packageName, String directoryName) {
+        Reflections reflections = new Reflections(packageName);
+        Set<Class<?>> seeds = reflections.getTypesAnnotatedWith(Seed.class);
 
-    private void checkFiles() throws Exception {
-        /*
+        for (Class<?> seed : seeds) {
+            File file = seedFile(directoryName, seed);
 
-        TODO: Read all the class names (and their location) from the seeds package into an array
-        TODO: Convert all the class names into a (local) files array new File (System.getProperty("user.dir") + "/storage/device.xml)
-
-        TODO: Give the Kernel his own config directory and his own config files
-
-        seeder.seed() will seed the seed
-
-        seeder.seed(DeviceSeed);
-        seeder.seed(CommandsSeed);
-
-        */
-
-        File[] files = {
-                new File(System.getProperty("user.dir") + "/storage/device.xml"),
-                new File(System.getProperty("user.dir") + "/storage/commands.xml")
-        };
-
-        for (File file : files) {
             if (!file.exists()) {
-                new Seeding(generateSeedName(file));
+                try {
+                    Seeder seeder = (Seeder) seed.newInstance();
+                    seeding(seeder, file);
+                } catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
 
-    private String generateSeedName(File file) {
-        String name = file.getName().replace(".xml", "");
-        name = Character.toUpperCase(name.charAt(0)) + name.substring(1);
+    private File seedFile(String directory, Class<?> seed) {
+        String seedDirectory = directory + Symbols.SEPARATOR;
+        String seedLocation = seed.getAnnotation(Seed.class).directory();
 
-        return name;
+        if (!seedLocation.equals("default")) {
+            seedDirectory += seedLocation.replace(Symbols.DOT, Symbols.SEPARATOR) + Symbols.SEPARATOR;
+        }
+
+        String seedFileName = seed.getSimpleName().replace("Seed", "").toLowerCase() + Extensions.XML;
+        String seedFilePath = seedDirectory + seedFileName;
+
+        return new File(seedFilePath);
+    }
+
+    private void seeding(Seeder seeder, File file) throws IllegalAccessException, ClassNotFoundException, InstantiationException {
+        Seeding seeding = new Seeding(seeder, file);
+        Thread thread = new Thread(seeding);
+        thread.start();
     }
 
 }

@@ -1,9 +1,9 @@
-package nl.nberlijn.powercontrol.models;
+package nl.nberlijn.powercontrol.data.models;
 
-import nl.nberlijn.powercontrol.kernel.model.Model;
-import nl.nberlijn.powercontrol.objects.Commands;
+import nl.nberlijn.powercontrol.kernel.models.JAXBModel;
+import nl.nberlijn.powercontrol.data.objects.Commands;
 
-public class CommandsModel extends Model<Commands> {
+public class CommandsModel extends JAXBModel<Commands> {
 
     public CommandsModel() {
         super(Commands.class);

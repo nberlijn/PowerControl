@@ -5,9 +5,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 
-import nl.nberlijn.powercontrol.config.Status;
-import nl.nberlijn.powercontrol.objects.Device;
-import nl.nberlijn.powercontrol.models.DeviceModel;
+import nl.nberlijn.powercontrol.kernel.config.Status;
+import nl.nberlijn.powercontrol.data.objects.Device;
+import nl.nberlijn.powercontrol.data.models.DeviceModel;
 
 import java.net.Socket;
 import java.net.URL;

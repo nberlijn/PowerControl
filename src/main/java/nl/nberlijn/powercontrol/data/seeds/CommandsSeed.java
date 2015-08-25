@@ -1,14 +1,15 @@
-package nl.nberlijn.powercontrol.seeds;
+package nl.nberlijn.powercontrol.data.seeds;
 
-import nl.nberlijn.powercontrol.objects.Command;
-import nl.nberlijn.powercontrol.objects.Commands;
+import nl.nberlijn.powercontrol.data.objects.Command;
+import nl.nberlijn.powercontrol.data.objects.Commands;
 import nl.nberlijn.powercontrol.kernel.seeder.Seed;
 import nl.nberlijn.powercontrol.kernel.seeder.Seeder;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Seed(location = "storage")
+@Seed
+@SuppressWarnings("unused")
 public class CommandsSeed implements Seeder<Commands> {
 
     @Override

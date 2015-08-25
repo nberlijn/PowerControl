@@ -1,18 +1,19 @@
-package nl.nberlijn.powercontrol.kernel.model;
+package nl.nberlijn.powercontrol.kernel.models;
 
-import nl.nberlijn.powercontrol.config.Storage;
+import nl.nberlijn.powercontrol.kernel.config.Extensions;
+import nl.nberlijn.powercontrol.kernel.config.Local;
 import nl.nberlijn.powercontrol.kernel.parsers.JAXBParser;
 
 import java.io.File;
 
 @SuppressWarnings("unchecked")
-public abstract class Model<T> {
+public abstract class JAXBModel<T> {
 
     private final JAXBParser jaxbParser;
     private T object;
 
-    protected Model(Class className) {
-        File file = new File(Storage.LOCAL_STORAGE_DIR + className.getSimpleName().toLowerCase() + Storage.STORAGE_EXTENSION);
+    protected JAXBModel(Class className) {
+        File file = new File(Local.LOCAL_STORAGE_DIR_PATH + className.getSimpleName().toLowerCase() + Extensions.XML);
 
         jaxbParser = new JAXBParser(file, className);
         object = (T) jaxbParser.unmarshaller();

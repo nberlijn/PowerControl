@@ -4,7 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
-import nl.nberlijn.powercontrol.objects.Command;
+import nl.nberlijn.powercontrol.data.objects.Command;
 
 /**
  * Class representing the command controller.

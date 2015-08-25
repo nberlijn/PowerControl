@@ -6,9 +6,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ProgressIndicator;
 import javafx.scene.layout.GridPane;
 
-import nl.nberlijn.powercontrol.objects.Command;
-import nl.nberlijn.powercontrol.models.CommandsModel;
-import nl.nberlijn.powercontrol.objects.Commands;
+import nl.nberlijn.powercontrol.data.objects.Command;
+import nl.nberlijn.powercontrol.data.models.CommandsModel;
+import nl.nberlijn.powercontrol.data.objects.Commands;
 import nl.nberlijn.powercontrol.services.CommandService;
 
 import java.util.List;

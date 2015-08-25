@@ -3,7 +3,7 @@ package nl.nberlijn.powercontrol.controllers.settings;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
-import nl.nberlijn.powercontrol.objects.Device;
+import nl.nberlijn.powercontrol.data.objects.Device;
 
 /**
  * Class representing the device controller.

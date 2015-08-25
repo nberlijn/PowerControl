@@ -9,8 +9,7 @@ import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 
 import nl.nberlijn.powercontrol.config.App;
-import nl.nberlijn.powercontrol.config.GUI;
-import nl.nberlijn.powercontrol.config.Symbols;
+import nl.nberlijn.powercontrol.kernel.config.Symbols;
 import nl.nberlijn.powercontrol.config.Views;
 
 import java.io.IOException;
@@ -37,8 +36,8 @@ public class MenuController {
 
         Stage stage = new Stage();
         stage.setResizable(false);
-        stage.setTitle(GUI.SETTINGS_TITLE);
-        stage.setScene(new Scene(root, GUI.SETTINGS_WIDTH, GUI.SETTINGS_HEIGHT));
+        stage.setTitle(Views.SETTINGS_VIEW_TITLE);
+        stage.setScene(new Scene(root, Views.SETTINGS_VIEW_WIDTH, Views.SETTINGS_VIEWS_HEIGHT));
         stage.show();
     }
 
