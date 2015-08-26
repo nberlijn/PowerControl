@@ -28,6 +28,6 @@ public final class App {
     /**
      * The classpath.
      */
-    public static final String CLASSPATH = "nl.nberlijn.powercontrol";
+    public static final String CLASSPATH = "nl.nberlijn.nl.nberlijn.powercontrol";
 
 }

@@ -1,11 +1,9 @@
 package nl.nberlijn.powercontrol.kernel.config;
 
-import nl.nberlijn.powercontrol.config.App;
-
 @SuppressWarnings("unused")
 public final class ClassPaths {
 
-    public static final String APP = App.CLASSPATH;
+    public static final String APP = "nl.nberlijn.nl.nberlijn.powercontrol";
 
     public static final String CONFIG = APP + Symbols.DOT + "config";
 

@@ -6,12 +6,12 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import nl.nberlijn.powercontrol.config.Views;
+
 import java.io.IOException;
 
-import static nl.nberlijn.powercontrol.config.Views.*;
-
 /**
- * Class representing the gui.
+ * Class representing the GUI.
  *
  * @author Nils Berlijn
  * @version 1.0
@@ -20,14 +20,13 @@ import static nl.nberlijn.powercontrol.config.Views.*;
 public final class GUI extends Application {
 
     /**
-     * Starts the application gui.
+     * Starts the GUI.
      */
     public static void start() {
         launch();
     }
 
     /**
-     * Starts the application gui.
      * Loads in the commands view and renders it to the screen.
      *
      * @param primaryStage The primary stage
@@ -35,11 +34,11 @@ public final class GUI extends Application {
      */
     @Override
     public void start(Stage primaryStage) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource(COMMANDS_VIEW_FILE_PATH));
+        Parent root = FXMLLoader.load(getClass().getResource(Views.COMMANDS_VIEW_FILE_PATH));
 
         primaryStage.setResizable(false);
-        primaryStage.setTitle(COMMANDS_VIEW_TITLE);
-        primaryStage.setScene(new Scene(root, COMMANDS_VIEW_WIDTH, COMMANDS_VIEW_HEIGHT));
+        primaryStage.setTitle(Views.COMMANDS_VIEW_TITLE);
+        primaryStage.setScene(new Scene(root, Views.COMMANDS_VIEW_WIDTH, Views.COMMANDS_VIEW_HEIGHT));
         primaryStage.show();
     }
 
