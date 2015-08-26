@@ -1,4 +1,4 @@
-package nl.nberlijn.powercontrol.controllers.commands;
+package nl.nberlijn.powercontrol.app.controllers.commands;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -6,10 +6,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ProgressIndicator;
 import javafx.scene.layout.GridPane;
 
-import nl.nberlijn.powercontrol.data.objects.Command;
-import nl.nberlijn.powercontrol.data.models.CommandsModel;
-import nl.nberlijn.powercontrol.data.objects.Commands;
-import nl.nberlijn.powercontrol.services.CommandService;
+import nl.nberlijn.powercontrol.app.data.objects.Command;
+import nl.nberlijn.powercontrol.app.data.models.CommandsModel;
+import nl.nberlijn.powercontrol.app.data.objects.Commands;
+import nl.nberlijn.powercontrol.app.services.CommandService;
 
 import java.util.List;
 

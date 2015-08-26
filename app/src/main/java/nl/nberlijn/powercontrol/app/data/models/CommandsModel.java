@@ -1,7 +1,7 @@
-package nl.nberlijn.powercontrol.data.models;
+package nl.nberlijn.powercontrol.app.data.models;
 
 import nl.nberlijn.powercontrol.kernel.models.JAXBModel;
-import nl.nberlijn.powercontrol.data.objects.Commands;
+import nl.nberlijn.powercontrol.app.data.objects.Commands;
 
 public class CommandsModel extends JAXBModel<Commands> {
 

@@ -1,11 +1,11 @@
-package nl.nberlijn.powercontrol.services;
+package nl.nberlijn.powercontrol.app.services;
 
 import javafx.concurrent.Service;
 import javafx.concurrent.Task;
 import javafx.scene.control.ProgressIndicator;
 import javafx.scene.layout.GridPane;
-import nl.nberlijn.powercontrol.data.objects.Command;
-import nl.nberlijn.powercontrol.services.command.CommandTask;
+import nl.nberlijn.powercontrol.app.data.objects.Command;
+import nl.nberlijn.powercontrol.app.services.command.CommandTask;
 
 /**
  * Class representing a command service.

@@ -1,4 +1,4 @@
-package nl.nberlijn.powercontrol.config;
+package nl.nberlijn.powercontrol.app.config;
 
 /**
  * Class representing the app config.

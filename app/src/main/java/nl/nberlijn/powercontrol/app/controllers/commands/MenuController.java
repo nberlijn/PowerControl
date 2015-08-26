@@ -1,4 +1,4 @@
-package nl.nberlijn.powercontrol.controllers.commands;
+package nl.nberlijn.powercontrol.app.controllers.commands;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -8,9 +8,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 
-import nl.nberlijn.powercontrol.config.App;
+import nl.nberlijn.powercontrol.app.config.App;
 import nl.nberlijn.powercontrol.kernel.config.Symbols;
-import nl.nberlijn.powercontrol.config.Views;
+import nl.nberlijn.powercontrol.app.config.Views;
 
 import java.io.IOException;
 

@@ -1,6 +1,6 @@
-package nl.nberlijn.powercontrol.data.seeds;
+package nl.nberlijn.powercontrol.app.data.seeds;
 
-import nl.nberlijn.powercontrol.data.objects.Device;
+import nl.nberlijn.powercontrol.app.data.objects.Device;
 import nl.nberlijn.powercontrol.kernel.seeder.Seed;
 import nl.nberlijn.powercontrol.kernel.seeder.Seeder;
 

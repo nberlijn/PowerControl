@@ -1,7 +1,7 @@
-package nl.nberlijn.powercontrol.data.models;
+package nl.nberlijn.powercontrol.app.data.models;
 
 import nl.nberlijn.powercontrol.kernel.models.JAXBModel;
-import nl.nberlijn.powercontrol.data.objects.Device;
+import nl.nberlijn.powercontrol.app.data.objects.Device;
 
 public class DeviceModel extends JAXBModel<Device> {
 

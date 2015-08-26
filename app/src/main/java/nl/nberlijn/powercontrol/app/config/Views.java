@@ -1,4 +1,4 @@
-package nl.nberlijn.powercontrol.config;
+package nl.nberlijn.powercontrol.app.config;
 
 import nl.nberlijn.powercontrol.kernel.config.Extensions;
 import nl.nberlijn.powercontrol.kernel.config.Symbols;

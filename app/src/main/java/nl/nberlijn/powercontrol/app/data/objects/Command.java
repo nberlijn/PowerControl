@@ -1,4 +1,4 @@
-package nl.nberlijn.powercontrol.data.objects;
+package nl.nberlijn.powercontrol.app.data.objects;
 
 import javax.xml.bind.annotation.*;
 

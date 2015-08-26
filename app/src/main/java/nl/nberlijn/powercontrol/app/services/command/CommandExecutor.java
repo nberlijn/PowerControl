@@ -1,6 +1,6 @@
-package nl.nberlijn.powercontrol.services.command;
+package nl.nberlijn.powercontrol.app.services.command;
 
-import nl.nberlijn.powercontrol.data.objects.Command;
+import nl.nberlijn.powercontrol.app.data.objects.Command;
 import nl.nberlijn.powercontrol.kernel.tools.SSH;
 
 /**

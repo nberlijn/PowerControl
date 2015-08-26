@@ -1,8 +1,8 @@
-package nl.nberlijn.powercontrol.services.command;
+package nl.nberlijn.powercontrol.app.services.command;
 
 import javafx.concurrent.Task;
 import javafx.scene.control.Alert;
-import nl.nberlijn.powercontrol.data.objects.Command;
+import nl.nberlijn.powercontrol.app.data.objects.Command;
 
 /**
  * Class representing a command task.

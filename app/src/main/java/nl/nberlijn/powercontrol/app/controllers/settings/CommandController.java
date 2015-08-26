@@ -1,10 +1,10 @@
-package nl.nberlijn.powercontrol.controllers.settings;
+package nl.nberlijn.powercontrol.app.controllers.settings;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
-import nl.nberlijn.powercontrol.data.objects.Command;
+import nl.nberlijn.powercontrol.app.data.objects.Command;
 
 /**
  * Class representing the command controller.

@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
 
-<GridPane xmlns:fx="http://javafx.com/fxml/1" alignment="CENTER" prefHeight="125.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/null" fx:controller="nl.nberlijn.powercontrol.controllers.commands.CommandsController">
+<GridPane xmlns:fx="http://javafx.com/fxml/1" alignment="CENTER" prefHeight="125.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/null" fx:controller="nl.nberlijn.powercontrol.app.controllers.commands.CommandsController">
     <columnConstraints>
         <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" percentWidth="100.0"/>
     </columnConstraints>

@@ -1,4 +1,4 @@
-package nl.nberlijn.powercontrol.controllers.settings;
+package nl.nberlijn.powercontrol.app.controllers.settings;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -11,12 +11,12 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
-import nl.nberlijn.powercontrol.config.Views;
-import nl.nberlijn.powercontrol.data.objects.Command;
-import nl.nberlijn.powercontrol.data.models.CommandsModel;
-import nl.nberlijn.powercontrol.data.objects.Commands;
-import nl.nberlijn.powercontrol.data.objects.Device;
-import nl.nberlijn.powercontrol.data.models.DeviceModel;
+import nl.nberlijn.powercontrol.app.config.Views;
+import nl.nberlijn.powercontrol.app.data.objects.Command;
+import nl.nberlijn.powercontrol.app.data.models.CommandsModel;
+import nl.nberlijn.powercontrol.app.data.objects.Commands;
+import nl.nberlijn.powercontrol.app.data.objects.Device;
+import nl.nberlijn.powercontrol.app.data.models.DeviceModel;
 
 import java.io.IOException;
 import java.net.URL;

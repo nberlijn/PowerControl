@@ -4,7 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<GridPane xmlns:fx="http://javafx.com/fxml/1" nodeOrientation="LEFT_TO_RIGHT" vgap="5.0" xmlns="http://javafx.com/javafx/null" fx:controller="nl.nberlijn.powercontrol.controllers.settings.CommandController">
+<GridPane xmlns:fx="http://javafx.com/fxml/1" nodeOrientation="LEFT_TO_RIGHT" vgap="5.0" xmlns="http://javafx.com/javafx/null" fx:controller="nl.nberlijn.powercontrol.app.controllers.settings.CommandController">
     <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" prefWidth="100.0"/>
         <ColumnConstraints hgrow="SOMETIMES"/>
