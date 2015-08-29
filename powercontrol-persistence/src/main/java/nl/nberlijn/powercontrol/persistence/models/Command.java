@@ -1,100 +1,130 @@
 package nl.nberlijn.powercontrol.persistence.models;
 
+import nl.nberlijn.powercontrol.api.persistence.models.Model;
+
 import javax.xml.bind.annotation.*;
 
+/**
+ * Class representing a Command.
+ *
+ * @author Nils Berlijn
+ * @version 1.0
+ * @since 1.0
+ */
 @XmlRootElement(name = "command")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(propOrder = {
-        "name",
         "host",
         "user",
-        "password",
-        "port",
         "timeout",
         "command"
 })
-public class Command {
+public class Command implements Model {
 
-    @XmlElement(name = "name")
-    private String name;
-
+    /**
+     * The host.
+     */
     @XmlElement(name = "host")
-    private String host;
+    private Host host;
 
+    /**
+     * The user.
+     */
     @XmlElement(name = "user")
-    private String user;
+    private User user;
 
-    @XmlElement(name = "password")
-    private String password;
-
-    @XmlElement(name = "port")
-    private Integer port;
-
+    /**
+     * The timeout.
+     */
     @XmlElement(name = "timeout")
     private Integer timeout;
 
+    /**
+     * The command.
+     */
     @XmlElement(name = "command")
     private String command;
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getHost() {
+    /**
+     * Gets the host.
+     *
+     * @return The host
+     */
+    public Host getHost() {
         return host;
     }
 
-    public void setHost(String host) {
+    /**
+     * Sets the host.
+     *
+     * @param host The host
+     */
+    public void setHost(Host host) {
         this.host = host;
     }
 
-    public String getUser() {
+    /**
+     * Gets the user.
+     *
+     * @return The user
+     */
+    public User getUser() {
         return user;
     }
 
-    public void setUser(String user) {
+    /**
+     * Sets the user.
+     *
+     * @param user The user
+     */
+    public void setUser(User user) {
         this.user = user;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public Integer getPort() {
-        return port;
-    }
-
-    public void setPort(Integer port) {
-        this.port = port;
-    }
-
+    /**
+     * Gets the timeout.
+     *
+     * @return The timeout
+     */
     public Integer getTimeout() {
         return timeout;
     }
 
+    /**
+     * Sets the timeout.
+     *
+     * @param timeout The timeout
+     */
     public void setTimeout(Integer timeout) {
         this.timeout = timeout;
     }
 
+    /**
+     * Gets the command.
+     *
+     * @return The command
+     */
     public String getCommand() {
         return command;
     }
 
+    /**
+     * Sets the command.
+     *
+     * @param command The command
+     */
     public void setCommand(String command) {
         this.command = command;
     }
 
+    /**
+     * Returns a representation of the Command.
+     *
+     * @return The command
+     */
     @Override
     public String toString() {
-        return name + " " + host + " " + user + " " + password + " " + port + " " + timeout + " " + command;
+        return host.toString() + user.toString() + " " + timeout + " " + command;
     }
 
 }

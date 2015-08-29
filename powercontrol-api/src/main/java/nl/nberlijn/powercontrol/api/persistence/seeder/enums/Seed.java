@@ -1,4 +1,4 @@
-package nl.nberlijn.powercontrol.api.persistence.seeder;
+package nl.nberlijn.powercontrol.api.persistence.seeder.enums;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

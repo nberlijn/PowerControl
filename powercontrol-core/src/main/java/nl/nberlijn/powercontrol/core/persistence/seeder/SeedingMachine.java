@@ -1,6 +1,6 @@
 package nl.nberlijn.powercontrol.core.persistence.seeder;
 
-import nl.nberlijn.powercontrol.api.persistence.seeder.Seed;
+import nl.nberlijn.powercontrol.api.persistence.seeder.enums.Seed;
 import nl.nberlijn.powercontrol.api.persistence.seeder.Seeder;
 import nl.nberlijn.powercontrol.core.config.Symbols;
 import nl.nberlijn.powercontrol.core.config.Extensions;
