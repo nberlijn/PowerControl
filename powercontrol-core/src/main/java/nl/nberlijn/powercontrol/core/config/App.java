@@ -7,7 +7,6 @@ package nl.nberlijn.powercontrol.core.config;
  * @version 1.0
  * @since 1.0
  */
-@SuppressWarnings("unused")
 public final class App {
 
     /**

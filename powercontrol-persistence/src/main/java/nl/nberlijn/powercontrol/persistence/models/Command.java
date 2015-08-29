@@ -1,6 +1,6 @@
 package nl.nberlijn.powercontrol.persistence.models;
 
-import nl.nberlijn.powercontrol.api.persistence.models.Model;
+import nl.nberlijn.powercontrol.core.persistence.models.XMLModel;
 
 import javax.xml.bind.annotation.*;
 
@@ -12,14 +12,13 @@ import javax.xml.bind.annotation.*;
  * @since 1.0
  */
 @XmlRootElement(name = "command")
-@XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(propOrder = {
         "host",
         "user",
         "timeout",
         "command"
 })
-public class Command implements Model {
+public class Command extends XMLModel {
 
     /**
      * The host.

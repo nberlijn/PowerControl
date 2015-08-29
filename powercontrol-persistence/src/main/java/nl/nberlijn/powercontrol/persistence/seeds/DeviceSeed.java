@@ -1,6 +1,6 @@
 package nl.nberlijn.powercontrol.persistence.seeds;
 
-import nl.nberlijn.powercontrol.api.persistence.seeder.enums.Seed;
+import nl.nberlijn.powercontrol.api.persistence.seeder.Seed;
 import nl.nberlijn.powercontrol.api.persistence.seeder.Seeder;
 import nl.nberlijn.powercontrol.persistence.models.Device;
 import nl.nberlijn.powercontrol.persistence.models.Host;
@@ -12,7 +12,7 @@ import nl.nberlijn.powercontrol.persistence.models.Host;
  * @version 1.0
  * @since 1.0
  */
-@Seed
+@Seed(location = "storage")
 @SuppressWarnings("unused")
 public class DeviceSeed implements Seeder<Device> {
 

@@ -7,17 +7,21 @@ package nl.nberlijn.powercontrol.core.config;
  * @version 1.0
  * @since 1.0
  */
-@SuppressWarnings("unused")
 public class Seeders {
 
     /**
      * The seeds package.
      */
-    public static final String SEEDS_PACKAGE = ClassPaths.SEEDS;
+    public static final String SEEDS_PACKAGE = Classpath.SEEDS;
 
     /**
-     * The seeds directory path.
+     * The models package.
      */
-    public static final String SEEDS_DIR_PATH = Local.LOCAL_STORAGE_DIR_PATH;
+    public static final String MODELS_PACKAGE = Classpath.MODELS;
+
+    /**
+     * The output directory.
+     */
+    public static final String OUTPUT_DIR = Local.LOCAL_DIR;
 
 }

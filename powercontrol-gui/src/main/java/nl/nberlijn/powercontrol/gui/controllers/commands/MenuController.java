@@ -8,7 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 import nl.nberlijn.powercontrol.core.config.App;
-import nl.nberlijn.powercontrol.core.config.Symbols;
+import nl.nberlijn.powercontrol.utils.Symbols;
 import nl.nberlijn.powercontrol.gui.config.Views;
 
 import java.io.IOException;

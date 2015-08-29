@@ -1,5 +1,6 @@
 package nl.nberlijn.powercontrol.core;
 
+import nl.nberlijn.powercontrol.api.persistence.seeder.Machine;
 import nl.nberlijn.powercontrol.core.config.Seeders;
 import nl.nberlijn.powercontrol.core.persistence.seeder.SeedingMachine;
 
@@ -16,7 +17,8 @@ public final class Core {
      * Preload Core modules.
      */
     public static void preload() {
-        new SeedingMachine().seed(Seeders.SEEDS_PACKAGE, Seeders.SEEDS_DIR_PATH);
+        Machine seedingMachine = new SeedingMachine(Seeders.SEEDS_PACKAGE, Seeders.MODELS_PACKAGE, Seeders.OUTPUT_DIR);
+        seedingMachine.start();
     }
 
 }

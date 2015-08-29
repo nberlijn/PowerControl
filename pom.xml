@@ -7,6 +7,7 @@
     <packaging>pom</packaging>
     <name>PowerControl</name>
     <description>PowerControl</description>
+    <url>https://github.com/nberlijn/PowerControl</url>
     <inceptionYear>2015</inceptionYear>
     <developers>
         <developer>
@@ -16,9 +17,9 @@
         </developer>
     </developers>
     <scm>
-        <connection>scm:git:git://github.com/nberlijn/powercontrol.git</connection>
-        <developerConnection>scm:git:git@github.com:nberlijn/powercontrol.git</developerConnection>
-        <url>http://github.com/nberlijn/powercontrol/tree/develop</url>
+        <connection>scm:git:git://github.com/nberlijn/PowerControl.git</connection>
+        <developerConnection>scm:git:git@github.com:nberlijn/PowerControl.git</developerConnection>
+        <url>http://github.com/nberlijn/PowerControl/tree/develop</url>
     </scm>
     <properties>
         <jdk.version>1.8</jdk.version>
@@ -115,5 +116,22 @@
                 </plugin>
             </plugins>
         </pluginManagement>
+        <plugins>
+            <plugin>
+                <artifactId>maven-clean-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <artifactId>maven-jar-plugin</artifactId>
+            </plugin>
+        </plugins>
     </build>
 </project>

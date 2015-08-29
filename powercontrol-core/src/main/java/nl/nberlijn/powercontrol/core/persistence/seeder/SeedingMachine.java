@@ -1,53 +1,57 @@
 package nl.nberlijn.powercontrol.core.persistence.seeder;
 
-import nl.nberlijn.powercontrol.api.persistence.seeder.enums.Seed;
+import nl.nberlijn.powercontrol.api.persistence.seeder.Machine;
+import nl.nberlijn.powercontrol.api.persistence.seeder.Seed;
 import nl.nberlijn.powercontrol.api.persistence.seeder.Seeder;
-import nl.nberlijn.powercontrol.core.config.Symbols;
-import nl.nberlijn.powercontrol.core.config.Extensions;
+import nl.nberlijn.powercontrol.utils.XML;
 
 import org.reflections.Reflections;
 
 import java.io.File;
 import java.util.Set;
 
-public class SeedingMachine {
+public class SeedingMachine implements Machine {
 
-    public void seed(String packageName, String directoryName) {
-        Reflections reflections = new Reflections(packageName);
+    private String seedsPackage;
+    private String modelsPackage;
+    private String outputDirectory;
+
+    public SeedingMachine(String seedsPackage, String modelsPackage, String outputDirectory) {
+        this.seedsPackage = seedsPackage;
+        this.modelsPackage = modelsPackage;
+        this.outputDirectory = outputDirectory;
+    }
+
+    @Override
+    public void start() {
+        Reflections reflections = new Reflections(seedsPackage);
         Set<Class<?>> seeds = reflections.getTypesAnnotatedWith(Seed.class);
 
-        for (Class<?> seed : seeds) {
-            File file = seedFile(directoryName, seed);
-
-            if (!file.exists()) {
-                try {
-                    Seeder seeder = (Seeder) seed.newInstance();
-                    seeding(seeder, file);
-                } catch (InstantiationException | IllegalAccessException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
+        seeds.forEach(this::check);
     }
 
-    private File seedFile(String directory, Class<?> seed) {
-        String seedDirectory = directory + Symbols.SEPARATOR;
-        String seedLocation = seed.getAnnotation(Seed.class).directory();
+    private Boolean check(Class<?> seed) {
+        File file = XML.generateOutputFile(outputDirectory, seed.getAnnotation(Seed.class).location(), seed, "Seed");
 
-        if (!seedLocation.equals("default")) {
-            seedDirectory += seedLocation.replace(Symbols.DOT, Symbols.SEPARATOR) + Symbols.SEPARATOR;
+        if (!file.exists()) {
+            return compose(seed, file);
         }
 
-        String seedFileName = seed.getSimpleName().replace("Seed", "").toLowerCase() + Extensions.XML;
-        String seedFilePath = seedDirectory + seedFileName;
-
-        return new File(seedFilePath);
+        return true;
     }
 
-    private void seeding(Seeder seeder, File file) {
-        Seeding seeding = new Seeding(seeder, file);
-        Thread thread = new Thread(seeding);
-        thread.start();
+    private Boolean compose(Class<?> seed, File file) {
+        try {
+            Seeder seeder = (Seeder) seed.newInstance();
+            Seeding seeding = new Seeding(modelsPackage, seeder, file);
+
+            Thread thread = new Thread(seeding);
+            thread.start();
+        } catch (InstantiationException | IllegalAccessException e) {
+            return false;
+        }
+
+        return true;
     }
 
 }

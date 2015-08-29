@@ -6,7 +6,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 
 import nl.nberlijn.powercontrol.api.persistence.repository.Repository;
-import nl.nberlijn.powercontrol.core.config.Status;
+import nl.nberlijn.powercontrol.gui.config.Status;
 import nl.nberlijn.powercontrol.persistence.models.Device;
 import nl.nberlijn.powercontrol.persistence.repository.DeviceRepository;
 

@@ -1,9 +1,7 @@
 package nl.nberlijn.powercontrol.persistence.models;
 
-import nl.nberlijn.powercontrol.api.persistence.models.Model;
+import nl.nberlijn.powercontrol.core.persistence.models.XMLModel;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -15,8 +13,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @since 1.0
  */
 @XmlRootElement(name = "device")
-@XmlAccessorType(XmlAccessType.FIELD)
-public class Device implements Model {
+public class Device extends XMLModel {
 
     @XmlElement(name = "host")
     private Host host;

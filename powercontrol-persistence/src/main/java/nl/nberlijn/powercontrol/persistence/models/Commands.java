@@ -1,9 +1,7 @@
 package nl.nberlijn.powercontrol.persistence.models;
 
-import nl.nberlijn.powercontrol.api.persistence.models.Model;
+import nl.nberlijn.powercontrol.core.persistence.models.XMLModel;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
@@ -16,8 +14,7 @@ import java.util.List;
  * @since 1.0
  */
 @XmlRootElement(name = "commands")
-@XmlAccessorType(XmlAccessType.FIELD)
-public class Commands implements Model {
+public class Commands extends XMLModel {
 
     /**
      * The commands.

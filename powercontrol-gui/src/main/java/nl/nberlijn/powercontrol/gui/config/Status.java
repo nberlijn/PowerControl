@@ -1,4 +1,4 @@
-package nl.nberlijn.powercontrol.core.config;
+package nl.nberlijn.powercontrol.gui.config;
 
 /**
  * Class representing the status config.

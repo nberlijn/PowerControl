@@ -1,8 +1,8 @@
 package nl.nberlijn.powercontrol.gui.config;
 
 import nl.nberlijn.powercontrol.core.config.App;
-import nl.nberlijn.powercontrol.core.config.Extensions;
-import nl.nberlijn.powercontrol.core.config.Symbols;
+import nl.nberlijn.powercontrol.utils.Extensions;
+import nl.nberlijn.powercontrol.utils.Symbols;
 
 /**
  * Class representing the views config.
@@ -17,22 +17,22 @@ public class Views {
     /* Directories */
 
     /**
-     * The views directory.
+     * The views location.
      */
     public static final String VIEWS_DIR = "views";
 
     /**
-     * The commands views directory.
+     * The commands views location.
      */
     public static final String COMMANDS_VIEWS_DIR = "commands";
 
     /**
-     * The settings views directory.
+     * The settings views location.
      */
     public static final String SETTINGS_VIEWS_DIR = "settings";
 
     /**
-     * The settings views forms directory.
+     * The settings views forms location.
      */
     public static final String SETTINGS_VIEWS_FORMS_DIR = "forms";
 
@@ -68,22 +68,22 @@ public class Views {
     /* Directory paths */
 
     /**
-     * The views directory path.
+     * The views location path.
      */
     public static final String VIEWS_DIR_PATH = Symbols.SEPARATOR + VIEWS_DIR + Symbols.SEPARATOR;
 
     /**
-     * The commands views directory path.
+     * The commands views location path.
      */
     public static final String COMMANDS_VIEWS_DIR_PATH = VIEWS_DIR_PATH + COMMANDS_VIEWS_DIR + Symbols.SEPARATOR;
 
     /**
-     * The settings views directory path.
+     * The settings views location path.
      */
     public static final String SETTINGS_VIEWS_DIR_PATH = VIEWS_DIR_PATH + SETTINGS_VIEWS_DIR + Symbols.SEPARATOR;
 
     /**
-     * The settings views forms directory path.
+     * The settings views forms location path.
      */
     public static final String SETTINGS_VIEWS_FORMS_DIR_PATH = SETTINGS_VIEWS_DIR_PATH + SETTINGS_VIEWS_FORMS_DIR + Symbols.SEPARATOR;
 

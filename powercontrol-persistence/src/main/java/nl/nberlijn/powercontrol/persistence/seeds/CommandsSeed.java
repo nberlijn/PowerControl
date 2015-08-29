@@ -1,6 +1,6 @@
 package nl.nberlijn.powercontrol.persistence.seeds;
 
-import nl.nberlijn.powercontrol.api.persistence.seeder.enums.Seed;
+import nl.nberlijn.powercontrol.api.persistence.seeder.Seed;
 import nl.nberlijn.powercontrol.api.persistence.seeder.Seeder;
 import nl.nberlijn.powercontrol.persistence.models.Command;
 import nl.nberlijn.powercontrol.persistence.models.Commands;
@@ -17,7 +17,7 @@ import java.util.List;
  * @version 1.0
  * @since 1.0
  */
-@Seed
+@Seed(location = "storage")
 @SuppressWarnings("unused")
 public class CommandsSeed implements Seeder<Commands> {
 
