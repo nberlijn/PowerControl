@@ -32,7 +32,6 @@
         <module>powercontrol-core</module>
         <module>powercontrol-persistence</module>
         <module>powercontrol-utils</module>
-        <module>powercontrol-gui</module>
         <module>powercontrol-dist</module>
     </modules>
     <dependencyManagement>
