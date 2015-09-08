@@ -3,7 +3,6 @@
 Thank you for considering contributing to PowerControl.
 
 * For new feature idea's open a new Issue ticket.
-* Follow the following steps for creating a new pull request.
 
 ## Pull requests
 
