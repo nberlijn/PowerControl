@@ -7,7 +7,7 @@ Thank you for considering contributing to PowerControl!
 
 ## Pull requests
 
-1. [Fork](https://github.com/nberlijn/PowerControl#fork-destination-box) the repository.
+1. Fork the repository.
 2. Create a new branch from the `master` branch.
 2. Make your changes.
 4. Submit a pull request.
