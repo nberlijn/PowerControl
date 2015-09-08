@@ -1,6 +1,6 @@
 # Contributing to PowerControl
 
-Thank you for considering contributing to PowerControl!
+Thank you for considering contributing to PowerControl! A few things you should know about contributing:
 
 * If you're interested in seeing a new feature, create a new issue and describe the feature.
 * If you're fixing a bug without changing the core, feel free to submit a pull request.
