@@ -2,7 +2,7 @@
 
 Thank you for considering contributing to PowerControl!
 
-* If you're interested in creating a new feature, create a new issue and describe your feature.
+* If you're interested in seeing a new feature, create a new issue and describe the feature.
 * If you're fixing a bug without changing the core, feel free to submit a pull request.
 
 ## Pull requests
